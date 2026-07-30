@@ -1,6 +1,6 @@
 ---
 name: legal-doc-translation
-description: Translate legal documents (contracts, statutes, court filings, powers of attorney, corporate charters, etc.) between Russian and English while precisely preserving every legally load-bearing detail — clause/article numbers, statute and case citations, defined terms, dates, sums and currencies, party names, cross-references, and the original numbering/formatting structure. Produces a formatted .docx translation plus a short flagged-terms appendix listing concepts with no exact equivalent in the target legal system, with a translator's note for each. Use this whenever the user asks to translate a legal or official document, a contract, a law/statute excerpt, a court document, or mentions "юридический перевод", "перевести договор/закон", or needs an RU↔EN legal translation — even if they don't use the word "skill".
+description: Translate legal documents (contracts, statutes, court filings, powers of attorney, corporate charters, etc.) between Russian and English while precisely preserving every legally load-bearing detail — clause/article numbers, statute and case citations, defined terms, dates, sums and currencies, party names, cross-references, and the original numbering/formatting structure. Highlights disputed/no-equivalent terms in yellow directly in the translated text and appends a flagged-terms note for each. Delivers the result in whatever format matches the input: a chat message reply if the source text was pasted in chat, or a formatted .docx if the source was supplied as a file. Use this whenever the user asks to translate a legal or official document, a contract, a law/statute excerpt, a court document, or mentions "юридический перевод", "перевести договор/закон", or needs an RU↔EN legal translation — even if they don't use the word "skill".
 ---
 
 # Legal Document Translation (RU ↔ EN)
@@ -32,9 +32,20 @@ A useful gut check while translating: if you highlighted only the numbers, prope
 1. **Read the whole source document first** before translating any of it. Note the legal system it comes from (e.g. Russian civil law vs. US/UK common law) — this determines which target-language legal vocabulary is appropriate and which concepts might not map cleanly.
 2. **Build a mental (or written) glossary of defined terms** before translating the body, so the same term gets the same rendering everywhere it appears. For a long document, jot this down in a scratch file rather than trusting memory across many pages.
 3. **Translate section by section**, keeping structural numbering intact. If the source uses "4.2.1", the translation uses "4.2.1" too — do not flatten or renumber even if the target language would naturally structure it differently.
-4. **Flag anything without a clean equivalent** as you go, rather than silently picking a rendering and moving on. See below.
-5. **Assemble the final document as .docx**, mirroring the source's structure (headings, numbered lists, tables, signature blocks). Use the `docx` skill for this — read it before generating the output file, since it has the correct approach for headings, page numbers, and formatting fidelity in Word documents.
-6. **Append a flagged-terms section** at the end of the same .docx (or as a clearly separated final section) — see format below.
+4. **Flag anything without a clean equivalent** as you go, rather than silently picking a rendering and moving on, and mark it yellow at the point it occurs in the translated text — see "Highlighting flagged terms" below.
+5. **Determine the output format from how the source arrived**:
+   - Source text was pasted or typed directly into the chat → reply with the translation as a chat message (formatted markdown), not as a file.
+   - Source text came as an uploaded file (.docx, .pdf, scanned image, etc.) → produce a formatted **.docx** file, mirroring the source's structure (headings, numbered lists, tables, signature blocks). Use the `docx` skill for this — read it before generating the output file, since it has the correct approach for headings, page numbers, highlight formatting, and fidelity in Word documents.
+   - If it's ambiguous which the user wants, default to matching the input medium rather than asking, unless the length or formatting complexity of the source makes a chat reply impractical (e.g. a multi-page contract with tables) — in that case produce the .docx and say why.
+6. **Append a flagged-terms section** at the end of the output (chat message or .docx alike) — see format below.
+
+## Highlighting flagged terms
+
+Every term that ends up in the flagged-terms appendix must also be visually marked with a **yellow highlight** at the exact spot it appears in the translated body text, not only listed at the end. This lets the reader spot every disputed/no-equivalent term at a glance while reading, without having to cross-reference the appendix.
+
+- **In a .docx output**: apply actual yellow text-highlight formatting (e.g. `WD_COLOR_INDEX.YELLOW` via `python-docx`, or the equivalent in whatever docx-generation approach the `docx` skill specifies) to the translated term itself, at every occurrence that was flagged.
+- **In a chat message output**: wrap the flagged term in an inline `<mark>term</mark>` HTML tag, which renders with a yellow background in standard markdown viewers. Do not use plain bold or asterisks for this — those are reserved for other emphasis and won't read as "flagged" to the user.
+- Highlight only the specific flagged term/phrase itself, not the surrounding sentence — over-highlighting defeats the point of drawing the eye to the disputed spot.
 
 ## Handling terms with no exact equivalent
 
