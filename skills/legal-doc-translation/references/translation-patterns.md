@@ -54,6 +54,11 @@ load-bearing, and promote to Section A once approved.
 | Во избежание сомнений | For the avoidance of doubt | EN→RU | Standard boilerplate opener; clean equivalent, not flagged | 2026-08-14 | chat |
 | приложение | annex | EN→RU | Standard, clean equivalent | 2026-08-14 | chat |
 | Бизнес-план | the Business Plan | EN→RU | Defined term, direct calque; capitalized as in source | 2026-08-14 | chat |
+| Банк России | CBR / Central Bank of Russia | EN→RU | Provisional — official current name used over the more colloquial «ЦБ РФ»; will recur, needs confirmation for consistency | 2026-08-14 | consents clause, chat |
+| денежный взнос | cash contribution (lowercase) | EN→RU | Deliberately distinct from «Вклад» (locked for capitalized defined term «the Contribution») — do not merge the two unless confirmed they refer to the same thing | 2026-08-14 | consents clause, chat |
+| Акции | Shares | EN→RU | Defined term, capitalized | 2026-08-14 | consents clause, chat |
+| Покупатель | the Buyer | EN→RU | Defined term, capitalized | 2026-08-14 | consents clause, chat |
+| Согласия | the Consents | EN→RU | Defined term introduced by this clause, plural, capitalized | 2026-08-14 | consents clause, chat |
 | заём | loan | EN→RU | Standard term under Ch. 42 ГК РФ, not «кредит» (bank-specific) | 2026-08-14 | Contribution/loan clause, chat |
 | не является | does not / shall not constitute | EN→RU | Declarative negative, present tense in RU regardless of EN modal «shall» | 2026-08-14 | Contribution/loan clause, chat |
 | иной доход | other return | EN→RU | Kept consistent across both occurrences in the excerpt | 2026-08-14 | Contribution/loan clause, chat |
