@@ -29,7 +29,7 @@ Terms the user has explicitly approved or supplied. Bind unconditionally.
 
 | RU | EN | Direction | Note | Added | Source |
 |---|---|---|---|---|---|
-| _(empty — no user-confirmed renderings yet)_ | | | | | |
+| правопреемники и лица, принявшие права и/или обязанности Стороны | legal successors and assignees | EN→RU | User picked over «цессионарии» (too narrow — rights only) and over a full descriptive gloss (too long); keeps the two-part structure of the source while covering both cession and перевод долга | 2026-08-14 | successors clause, chat |
 
 Format for new rows: `| исходный термин | chosen rendering | RU→EN / EN→RU / both | why this one, what it displaces | YYYY-MM-DD | doc or turn |`
 
@@ -59,7 +59,6 @@ load-bearing, and promote to Section A once approved.
 | уплата процентов | payment of interest | EN→RU | Standard | 2026-08-14 | Contribution/loan clause, chat |
 | Стороны | the Parties | EN→RU | Defined term, capitalized in RU as in source | 2026-08-14 | successors clause, chat |
 | распространяется на | shall apply to | EN→RU | Standard for scope/applicability clauses | 2026-08-14 | successors clause, chat |
-| правопреемники и цессионарии | legal successors and assignees | EN→RU | See flag: «цессионарии» is narrower than common-law «assignees» (rights only, not obligations) | 2026-08-14 | successors clause, chat |
 
 ---
 
