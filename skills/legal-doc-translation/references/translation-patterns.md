@@ -51,6 +51,7 @@ load-bearing, and promote to Section A once approved.
 | в отношении | with respect to | EN→RU | Over «касательно» / «применительно к» | 2026-08-14 | release clause, chat |
 | настоящий Договор | this Agreement | EN→RU | Defined term; «настоящий», not «данный» | 2026-08-14 | release clause, chat |
 | Вклад | the Contribution | EN→RU | Provisional — final choice depends on the contract's definition (вклад в уставный капитал / вклад в имущество / взнос) | 2026-08-14 | release clause, chat |
+| Во избежание сомнений | For the avoidance of doubt | EN→RU | Standard boilerplate opener; clean equivalent, not flagged | 2026-08-14 | chat |
 
 ---
 
