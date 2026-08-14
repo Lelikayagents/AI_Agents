@@ -52,6 +52,8 @@ load-bearing, and promote to Section A once approved.
 | настоящий Договор | this Agreement | EN→RU | Defined term; «настоящий», not «данный» | 2026-08-14 | release clause, chat |
 | Вклад | the Contribution | EN→RU | Provisional — final choice depends on the contract's definition (вклад в уставный капитал / вклад в имущество / взнос) | 2026-08-14 | release clause, chat |
 | Во избежание сомнений | For the avoidance of doubt | EN→RU | Standard boilerplate opener; clean equivalent, not flagged | 2026-08-14 | chat |
+| приложение | annex | EN→RU | Standard, clean equivalent | 2026-08-14 | chat |
+| Бизнес-план | the Business Plan | EN→RU | Defined term, direct calque; capitalized as in source | 2026-08-14 | chat |
 | заём | loan | EN→RU | Standard term under Ch. 42 ГК РФ, not «кредит» (bank-specific) | 2026-08-14 | Contribution/loan clause, chat |
 | не является | does not / shall not constitute | EN→RU | Declarative negative, present tense in RU regardless of EN modal «shall» | 2026-08-14 | Contribution/loan clause, chat |
 | иной доход | other return | EN→RU | Kept consistent across both occurrences in the excerpt | 2026-08-14 | Contribution/loan clause, chat |
