@@ -43,7 +43,14 @@ load-bearing, and promote to Section A once approved.
 
 | RU | EN | Direction | Why chosen | Added | Source |
 |---|---|---|---|---|---|
-| _(empty)_ | | | | | |
+| настоящим | hereby | EN→RU | Standard opener for a self-executing declaration; not «этим», not dropped | 2026-08-14 | release clause, chat |
+| безусловно и безотзывно | unconditionally and irrevocably | EN→RU | Doublet kept as two adverbs rather than collapsed into one | 2026-08-14 | release clause, chat |
+| заявляет | declares | EN→RU | Unilateral declaration; deliberately not «заверяет», which invokes ст. 431.2 ГК РФ representations | 2026-08-14 | release clause, chat |
+| требования и/или претензии | claims and/or complaints | EN→RU | Both halves kept; see flag — «претензия» is narrower than *complaint* | 2026-08-14 | release clause, chat |
+| каких бы то ни было | whatsoever | EN→RU | Intensifier rendered explicitly, not dropped as untranslatable | 2026-08-14 | release clause, chat |
+| в отношении | with respect to | EN→RU | Over «касательно» / «применительно к» | 2026-08-14 | release clause, chat |
+| настоящий Договор | this Agreement | EN→RU | Defined term; «настоящий», not «данный» | 2026-08-14 | release clause, chat |
+| Вклад | the Contribution | EN→RU | Provisional — final choice depends on the contract's definition (вклад в уставный капитал / вклад в имущество / взнос) | 2026-08-14 | release clause, chat |
 
 ---
 
