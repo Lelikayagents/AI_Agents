@@ -29,6 +29,12 @@ A useful gut check while translating: if you highlighted only the numbers, prope
 
 ## Workflow
 
+0. **Read `references/translation-patterns.md` first.** It records how *this
+   user* translates — terms they have locked in, renderings they have rejected,
+   and their structural conventions for numbering, dates, money, and names. A
+   locked entry there overrides your own instinct and any standard dictionary;
+   do not restyle it. Where the file is silent, fall back to its Section F
+   defaults.
 1. **Read the whole source document first** before translating any of it. Note the legal system it comes from (e.g. Russian civil law vs. US/UK common law) — this determines which target-language legal vocabulary is appropriate and which concepts might not map cleanly.
 2. **Build a mental (or written) glossary of defined terms** before translating the body, so the same term gets the same rendering everywhere it appears. For a long document, jot this down in a scratch file rather than trusting memory across many pages.
 3. **Translate section by section**, keeping structural numbering intact. If the source uses "4.2.1", the translation uses "4.2.1" too — do not flatten or renumber even if the target language would naturally structure it differently.
@@ -38,6 +44,13 @@ A useful gut check while translating: if you highlighted only the numbers, prope
    - Source text came as an uploaded file (.docx, .pdf, scanned image, etc.) → produce a formatted **.docx** file, mirroring the source's structure (headings, numbered lists, tables, signature blocks). Use the `docx` skill for this — read it before generating the output file, since it has the correct approach for headings, page numbers, highlight formatting, and fidelity in Word documents.
    - If it's ambiguous which the user wants, default to matching the input medium rather than asking, unless the length or formatting complexity of the source makes a chat reply impractical (e.g. a multi-page contract with tables) — in that case produce the .docx and say why.
 6. **Append a flagged-terms section** at the end of the output (chat message or .docx alike) — see format below.
+7. **Record what you learned back into `references/translation-patterns.md`.**
+   Every correction the user makes, every rendering they confirm, and every
+   structural convention you observe goes in with a date and a source note, in
+   the same turn it happens. An unrecorded correction will be repeated on the
+   next document. If the user supplies their own translation of a text alongside
+   the source, run the intake procedure at the end of that file — a parallel text
+   is the densest source of their style available.
 
 ## Highlighting flagged terms
 
