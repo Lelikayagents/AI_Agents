@@ -59,6 +59,11 @@ load-bearing, and promote to Section A once approved.
 | Акции | Shares | EN→RU | Defined term, capitalized | 2026-08-14 | consents clause, chat |
 | Покупатель | the Buyer | EN→RU | Defined term, capitalized | 2026-08-14 | consents clause, chat |
 | Согласия | the Consents | EN→RU | Defined term introduced by this clause, plural, capitalized | 2026-08-14 | consents clause, chat |
+| отказ от настоящего Договора | withdrawal from this Agreement | EN→RU | Functional match to unilateral отказ от исполнения договора, ст. 450.1 ГК РФ | 2026-08-14 | withdrawal clause, chat |
+| прекращает действие | shall cease to have effect | EN→RU | Standard | 2026-08-14 | withdrawal clause, chat |
+| убытки | damages | EN→RU | Standard, ст. 15 ГК РФ | 2026-08-14 | withdrawal clause, chat |
+| Продавец | the Seller | EN→RU | Defined term, capitalized | 2026-08-14 | withdrawal clause, chat |
+| Покупная цена | the Purchase Price | EN→RU | Provisional — first appearance of this defined term; needs confirmation, may already have a settled RU rendering elsewhere in the document | 2026-08-14 | withdrawal clause, chat |
 | заём | loan | EN→RU | Standard term under Ch. 42 ГК РФ, not «кредит» (bank-specific) | 2026-08-14 | Contribution/loan clause, chat |
 | не является | does not / shall not constitute | EN→RU | Declarative negative, present tense in RU regardless of EN modal «shall» | 2026-08-14 | Contribution/loan clause, chat |
 | иной доход | other return | EN→RU | Kept consistent across both occurrences in the excerpt | 2026-08-14 | Contribution/loan clause, chat |
@@ -96,6 +101,7 @@ until an entry is filled, follow Section F.
 - **Entity forms (ООО / АО / ИП): translate, transliterate, or keep + gloss** — _(unrecorded)_
 - **Registration identifiers (ИНН, ОГРН, КПП, EIN)** — _(unrecorded)_
 - **Statute citation style (ст./п./ч. vs. Article/Clause/Part)** — _(open question, 2026-08-14): source uses "Article X.Y" with decimal sub-numbering; I defaulted "Article 2.1" → "п. 2.1" (decimal nesting reads more naturally as «пункт» in RU). Awaiting user confirmation on whether to keep «статья N.N» throughout instead — once confirmed, applies uniformly for the rest of this document._
+- **"Section N" (whole-number, no decimal)** — _(open, 2026-08-14): distinct source word from "Article X.Y" above, so rendered separately as «Раздел N» (top-level division) rather than «п. N». Flag to confirm this distinction is real and not just inconsistent source drafting — if "Section" and "Article" turn out to mean the same structural level, collapse to one convention._
 - **Defined-term marking (Capitalization, «quotes», bold)** — _(unrecorded)_
 - **Addresses: transliterate or translate street types** — _(unrecorded)_
 - **Signature blocks and seal notations** — _(unrecorded)_
@@ -107,7 +113,7 @@ until an entry is filled, follow Section F.
 Sentence-level habits, not single terms — the things that make a translation read
 as *this user's* work rather than generically correct.
 
-- **Modality (обязан / должен / вправе → shall / must / may / is entitled to)** — _(unrecorded)_
+- **Modality (обязан / должен / вправе → shall / must / may / is entitled to)** — observed: `shall be entitled to` → «вправе»; `shall [+ verb of obligation]` → «обязан» (e.g. `shall refund` → «обязан вернуть»). Keep the two distinct — don't collapse both to «обязан» or both to «вправе».
 - **Impersonal RU constructions → active or passive EN** — _(unrecorded)_
 - **Nominalization: keep the RU noun-chain or verbalize it in EN** — _(unrecorded)_
 - **Sentence splitting: preserve long RU periods or break them** — _(unrecorded)_
