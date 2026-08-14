@@ -52,6 +52,11 @@ load-bearing, and promote to Section A once approved.
 | настоящий Договор | this Agreement | EN→RU | Defined term; «настоящий», not «данный» | 2026-08-14 | release clause, chat |
 | Вклад | the Contribution | EN→RU | Provisional — final choice depends on the contract's definition (вклад в уставный капитал / вклад в имущество / взнос) | 2026-08-14 | release clause, chat |
 | Во избежание сомнений | For the avoidance of doubt | EN→RU | Standard boilerplate opener; clean equivalent, not flagged | 2026-08-14 | chat |
+| заём | loan | EN→RU | Standard term under Ch. 42 ГК РФ, not «кредит» (bank-specific) | 2026-08-14 | Contribution/loan clause, chat |
+| не является | does not / shall not constitute | EN→RU | Declarative negative, present tense in RU regardless of EN modal «shall» | 2026-08-14 | Contribution/loan clause, chat |
+| иной доход | other return | EN→RU | Kept consistent across both occurrences in the excerpt | 2026-08-14 | Contribution/loan clause, chat |
+| возврат займа | repayment of a loan | EN→RU | Over «погашение», which reads as bank-credit register | 2026-08-14 | Contribution/loan clause, chat |
+| уплата процентов | payment of interest | EN→RU | Standard | 2026-08-14 | Contribution/loan clause, chat |
 
 ---
 
@@ -81,7 +86,7 @@ until an entry is filled, follow Section F.
 - **Party name transliteration (ГОСТ / BGN / passport spelling)** — _(unrecorded)_
 - **Entity forms (ООО / АО / ИП): translate, transliterate, or keep + gloss** — _(unrecorded)_
 - **Registration identifiers (ИНН, ОГРН, КПП, EIN)** — _(unrecorded)_
-- **Statute citation style (ст./п./ч. vs. Article/Clause/Part)** — _(unrecorded)_
+- **Statute citation style (ст./п./ч. vs. Article/Clause/Part)** — _(open question, 2026-08-14): source uses "Article X.Y" with decimal sub-numbering; I defaulted "Article 2.1" → "п. 2.1" (decimal nesting reads more naturally as «пункт» in RU). Awaiting user confirmation on whether to keep «статья N.N» throughout instead — once confirmed, applies uniformly for the rest of this document._
 - **Defined-term marking (Capitalization, «quotes», bold)** — _(unrecorded)_
 - **Addresses: transliterate or translate street types** — _(unrecorded)_
 - **Signature blocks and seal notations** — _(unrecorded)_
