@@ -57,6 +57,9 @@ load-bearing, and promote to Section A once approved.
 | иной доход | other return | EN→RU | Kept consistent across both occurrences in the excerpt | 2026-08-14 | Contribution/loan clause, chat |
 | возврат займа | repayment of a loan | EN→RU | Over «погашение», which reads as bank-credit register | 2026-08-14 | Contribution/loan clause, chat |
 | уплата процентов | payment of interest | EN→RU | Standard | 2026-08-14 | Contribution/loan clause, chat |
+| Стороны | the Parties | EN→RU | Defined term, capitalized in RU as in source | 2026-08-14 | successors clause, chat |
+| распространяется на | shall apply to | EN→RU | Standard for scope/applicability clauses | 2026-08-14 | successors clause, chat |
+| правопреемники и цессионарии | legal successors and assignees | EN→RU | See flag: «цессионарии» is narrower than common-law «assignees» (rights only, not obligations) | 2026-08-14 | successors clause, chat |
 
 ---
 
