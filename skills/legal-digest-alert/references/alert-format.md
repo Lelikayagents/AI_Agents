@@ -8,7 +8,7 @@ This file was revised after a partner edit-pass over a real Alert draft. Where t
 
 ## Output medium
 
-Word `.docx` built on the firm's template, not a slide deck. Reuse the template's `styles.xml`, header and footer rather than building a document from scratch — see "Word styles" below for the exact style IDs. (Slide decks remain the medium for periodic digests; an Alert is a memo.)
+Word `.docx` built on the firm's template, not a slide deck. Reuse the template's `styles.xml`, header and footer rather than building a document from scratch — see "Word styles" below for the exact style IDs. Digests are Word documents too; nothing this skill produces is a deck.
 
 ## Document structure
 
@@ -78,11 +78,13 @@ Every legal instrument named gets its full official title, number, and date, ver
 
 ## Footer and contacts
 
-The firm template's header and footer carry the confidentiality marking and page numbers. Where an Alert is issued as a deck rather than a memo, reproduce on every content slide after the cover:
+The firm template's header and footer already carry the confidentiality marking, the draft date field and page numbers — do not add your own.
+
+Where a disclaimer has to appear in the body (a справка for internal use, or a document circulated outside the template), use:
 
 > © ООО «Стоунбридж Лигал», [year]. Сведения и материалы, представленные в настоящем документе, подготовлены исключительно в информационных целях и не являются юридической консультацией или заключением.
 
-Firm contact details for a closing contact slide:
+Firm contact details, when a document needs them:
 
 ```
 +7 495 785 30 00

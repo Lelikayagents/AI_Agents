@@ -41,7 +41,7 @@ The humanizer skill's full pattern list (inflated significance, promotional lang
 
 - The alert-format's own prescribed hedges — "мы полагаем", "мы понимаем", "можно предположить, что" — are deliberate house register for Alerts/справки, not AI-tells. Don't strip these out; they're what the format calls for. The distinction: a hedge earns its place when it's followed by an actual analytical claim; it's a tell when it's decorative throat-clearing before a sentence that would stand fine without it.
 - Legal terms of art, defined terms, and citation-format boilerplate required by `digest-format.md`/`alert-format.md` (fixed titles, footer text, citation patterns) are not "clichés" to be freshened up — reproduce those verbatim as required.
-- Chat-facing convenience markers (⚠️ flags for open verification items, bold inline flags used while drafting with the user) belong in the conversation, never inside the delivered document/deck text itself — strip them before the content goes into a `.docx`/`.pptx` deliverable.
+- Chat-facing convenience markers (⚠️ flags for open verification items, bold inline flags used while drafting with the user) belong in the conversation, never inside the delivered document itself — strip them before the content goes into the `.docx`.
 
 ## Final pass before delivery
 
