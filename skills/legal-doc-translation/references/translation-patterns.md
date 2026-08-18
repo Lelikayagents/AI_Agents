@@ -30,6 +30,9 @@ Terms the user has explicitly approved or supplied. Bind unconditionally.
 | RU | EN | Direction | Note | Added | Source |
 |---|---|---|---|---|---|
 | правопреемники и лица, принявшие права и/или обязанности Стороны | legal successors and assignees | EN→RU | User picked over «цессионарии» (too narrow — rights only) and over a full descriptive gloss (too long); keeps the two-part structure of the source while covering both cession and перевод долга | 2026-08-14 | successors clause, chat |
+| требование | demand | RU→EN | From parallel text: «претензии и (или) требования» → «claims and (or) demands». Supersedes the earlier (wrong) provisional guess требования=claims | 2026-08-14 | governing-law/dispute-resolution clause, parallel text |
+| претензия | claim | RU→EN | Same source. Note: a second occurrence in the same clause («внедоговорные требования» → «non-contractual claims») uses требования=claims instead — the user's own text is not fully consistent here; flagged for the user, not silently resolved | 2026-08-14 | governing-law/dispute-resolution clause, parallel text |
+| Арбитражный суд города Москвы | the Commercial Court of the city of Moscow | RU→EN | Locked as a model-good pattern: avoids the classic false-friend "Arbitration Court" — «арбитражный суд» is Russia's state commercial-court system, not private arbitration. Use "Commercial Court" (or transliterated "Arbitrazh Court"), never "Arbitration Court" | 2026-08-14 | governing-law/dispute-resolution clause, parallel text |
 
 Format for new rows: `| исходный термин | chosen rendering | RU→EN / EN→RU / both | why this one, what it displaces | YYYY-MM-DD | doc or turn |`
 
@@ -46,7 +49,7 @@ load-bearing, and promote to Section A once approved.
 | настоящим | hereby | EN→RU | Standard opener for a self-executing declaration; not «этим», not dropped | 2026-08-14 | release clause, chat |
 | безусловно и безотзывно | unconditionally and irrevocably | EN→RU | Doublet kept as two adverbs rather than collapsed into one | 2026-08-14 | release clause, chat |
 | заявляет | declares | EN→RU | Unilateral declaration; deliberately not «заверяет», which invokes ст. 431.2 ГК РФ representations | 2026-08-14 | release clause, chat |
-| требования и/или претензии | claims and/or complaints | EN→RU | Both halves kept; see flag — «претензия» is narrower than *complaint* | 2026-08-14 | release clause, chat |
+| требования и/или претензии | demands and/or claims | EN→RU | REVISED 2026-08-14 (see Section C): parallel-text evidence shows требования=demands, претензии=claims, not the original claims/complaints guess | 2026-08-14 | release clause, chat |
 | каких бы то ни было | whatsoever | EN→RU | Intensifier rendered explicitly, not dropped as untranslatable | 2026-08-14 | release clause, chat |
 | в отношении | with respect to | EN→RU | Over «касательно» / «применительно к» | 2026-08-14 | release clause, chat |
 | настоящий Договор | this Agreement | EN→RU | Defined term; «настоящий», not «данный» | 2026-08-14 | release clause, chat |
@@ -71,6 +74,10 @@ load-bearing, and promote to Section A once approved.
 | уплата процентов | payment of interest | EN→RU | Standard | 2026-08-14 | Contribution/loan clause, chat |
 | Стороны | the Parties | EN→RU | Defined term, capitalized in RU as in source | 2026-08-14 | successors clause, chat |
 | распространяется на | shall apply to | EN→RU | Standard for scope/applicability clauses | 2026-08-14 | successors clause, chat |
+| Передаточное распоряжение | the Transfer Instrument | RU→EN | Defined term, capitalized | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
+| Документы по Сделке | the Transaction Documents | RU→EN | Defined term, plural, capitalized; «Сделка» = Transaction | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
+| Спор | the Dispute | RU→EN | Singular defined term collectively covering the plural list (disputes, disagreements, claims, demands) preceding it | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
+| Соглашение | the Agreement | RU→EN | This document's word for "Agreement" — note it uses «Соглашение», not «Договор» (locked separately for other documents); both map to "Agreement", track which source document uses which | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 
 ---
 
@@ -80,7 +87,7 @@ The highest-value section: each row is a mistake already made once.
 
 | Source term | I wrote | User uses | What the correction teaches | Added | Source |
 |---|---|---|---|---|---|
-| _(empty)_ | | | | | |
+| требования и/или претензии (from EN "claims and/or complaints") | требования=claims, претензии=complaints | требования=demands, претензии=claims | This wasn't a live user correction but a self-caught error from a supplied parallel text: my original EN→RU guess for this pair was backwards. «Претензия» ≈ claim (not the weaker "complaint"); «требование» ≈ demand. Generalization: don't assume near-synonym pairs in RU legal doublets map to near-synonym pairs in EN in the same order — check a real parallel example before locking either half. | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 
 When a row is added here, check whether the correction generalizes — if the user
 replaces one calque, they usually reject the whole family of calques. Write the
@@ -93,7 +100,9 @@ generalization into Section E rather than waiting to be corrected term by term.
 How the user wants the non-prose layer rendered. Fill in from observed practice;
 until an entry is filled, follow Section F.
 
-- **Clause numbering** — _(unrecorded)_
+- **Clause numbering** — observed (parallel text, 2026-08-18): RU numbers carry no trailing period ("1.1"), EN numbers do ("1.1."). Provisional — treat as this document's convention; confirm before assuming it's universal.
+- **Section-heading style, RU→EN** — observed: a RU heading noun-phrase like «порядок разрешения споров» (lit. "procedure for dispute resolution") compresses to just "Dispute Resolution" in the EN heading — «порядок» is dropped as a heading-only simplification, not a general license to drop it in body text.
+- **Governing-law heading: "право" vs "законодательство"** — _(open question, 2026-08-18)_: in the same document, the heading uses «ПРАВО» → "LEGISLATION" while the body uses «законодательством» → "the laws" (twice) — i.e. the narrower body term got the broader EN word and vice versa. Standard EN boilerplate for this heading is "Governing Law", not "Governing Legislation". Confirm whether this was intentional before treating "право"→"Legislation" as a pattern.
 - **Date format (RU→EN / EN→RU)** — _(unrecorded)_
 - **Money: digits + spelled-out redundancy** — _(unrecorded)_
 - **Thousands separator and decimal mark** — _(unrecorded)_
@@ -114,6 +123,9 @@ Sentence-level habits, not single terms — the things that make a translation r
 as *this user's* work rather than generically correct.
 
 - **Modality (обязан / должен / вправе → shall / must / may / is entitled to)** — observed: `shall be entitled to` → «вправе»; `shall [+ verb of obligation]` → «обязан» (e.g. `shall refund` → «обязан вернуть»). Keep the two distinct — don't collapse both to «обязан» or both to «вправе».
+- **Doublets in RU legal lists don't map term-for-term by position** — from parallel text (2026-08-18): «претензии и (или) требования» → «claims and (or) demands» is claim=2nd RU word / demand=1st-position-in-source-order-reversed pairing, not a naive left-to-right match. Never lock a doublet pairing without a real parallel-text example; a guessed pairing (see Section C) can be exactly backwards.
+- **"Исполнение" in a lifecycle list → risk of "execution"** — _(open, 2026-08-18)_: parallel text rendered «исполнение» (performance of obligations) as "execution", which in EN legal usage usually means signing a document — and "conclusion" (заключение) already covers signing in the same list. Flag this collision if it recurs; "performance" may be safer.
+- **«Обязательства из причинения вреда» → "obligations for damages"** — _(open, 2026-08-18)_: functionally close but not exact; "tortious obligations" / "obligations in tort" is the more standard EN legal-family term for гл. 59 ГК РФ delictual obligations. Note, not yet a confirmed correction.
 - **Impersonal RU constructions → active or passive EN** — _(unrecorded)_
 - **Nominalization: keep the RU noun-chain or verbalize it in EN** — _(unrecorded)_
 - **Sentence splitting: preserve long RU periods or break them** — _(unrecorded)_
