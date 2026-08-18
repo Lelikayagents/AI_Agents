@@ -35,6 +35,7 @@ Terms the user has explicitly approved or supplied. Bind unconditionally.
 | жалоба | complaint | RU→EN | New, from the same five-item list confirming требование/претензия above. Note this is the word my very first (wrong) guess had mapped to «претензия» instead — closes that loop | 2026-08-18 | confidentiality clause, parallel text |
 | предписание | order | RU→EN | Same five-item list | 2026-08-18 | confidentiality clause, parallel text |
 | судебный иск | lawsuit | RU→EN | Same five-item list | 2026-08-18 | confidentiality clause, parallel text |
+| SAPA | SAPA | EN→RU | Explicit user instruction: leave untranslated/untransliterated as a term, both directions | 2026-08-18 | chat |
 | Арбитражный суд города Москвы | the Commercial Court of the city of Moscow | RU→EN | Locked as a model-good pattern: avoids the classic false-friend "Arbitration Court" — «арбитражный суд» is Russia's state commercial-court system, not private arbitration. Use "Commercial Court" (or transliterated "Arbitrazh Court"), never "Arbitration Court" | 2026-08-14 | governing-law/dispute-resolution clause, parallel text |
 | третейское разбирательство / третейский суд | arbitration / arbitration proceedings | RU→EN | Confirms the distinction above: this is genuine private arbitration (unlike «арбитражный суд») and is correctly rendered "arbitration", not "Commercial Court" | 2026-08-18 | liability/termination clauses, parallel text |
 | Статья N (whole-number, incl. cited statute articles e.g. ГК РФ) | Clause N | RU→EN | Confirmed by repeated consistent use, including citations to Civil Code articles («статьи 451 ГК РФ» → "Clause 451 of the CC RF", «статей 469-477 ГК РФ» → "Clauses 469 to 477 of the CC RF"). Resolves the earlier open question — this user's house style uses "Clause" for every numbered division, contract-internal or statutory, not the more common international convention of "Article" for statute citations | 2026-08-18 | liability/termination/expenses clauses, parallel text |
@@ -82,6 +83,8 @@ load-bearing, and promote to Section A once approved.
 | уплата процентов | payment of interest | EN→RU | Standard | 2026-08-14 | Contribution/loan clause, chat |
 | Стороны | the Parties | EN→RU | Defined term, capitalized in RU as in source | 2026-08-14 | successors clause, chat |
 | распространяется на | shall apply to | EN→RU | Standard for scope/applicability clauses | 2026-08-14 | successors clause, chat |
+| сторона SAPA | a/the SAPA party | EN→RU | Kept "SAPA" untranslated per user instruction, "party" translated normally | 2026-08-18 | chat |
+| waived (a condition) | отказалась от соблюдения (условия) | EN→RU | Not «отменены» — «waive a condition» is a party's election not to insist on it, not cancelling the condition itself | 2026-08-18 | chat |
 | Передаточное распоряжение | the Transfer Instrument | RU→EN | Defined term, capitalized | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 | Документы по Сделке | the Transaction Documents | RU→EN | Defined term, plural, capitalized; «Сделка» = Transaction | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 | Спор | the Dispute | RU→EN | Singular defined term collectively covering the plural list (disputes, disagreements, claims, demands) preceding it | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
