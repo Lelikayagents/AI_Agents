@@ -29,7 +29,8 @@ The humanizer skill's full pattern list (inflated significance, promotional lang
 
 ## Patterns already covered by the English list — apply them in Russian too
 
-- **Em dash (тире) overuse.** Russian punctuation legitimately uses "—" for a missing copula ("Аллокация — это..."), for a sharp appositive, or for a genuine pivot. It should not become the default way to join every second clause where a comma, period, or colon would work. As a working cap: no more than one em dash per sentence, and not in more than roughly one sentence in three across a paragraph. If a paragraph has three or more em dashes, rewrite at least half of them as separate sentences or comma clauses.
+- **Em dash (—): banned outright in client deliverables.** This started as a frequency cap and was tightened to an absolute rule by the partner edit-pass: a delivered Alert/справка/digest should contain zero "—" characters. Use a hyphen with spaces where a dash is genuinely needed (`Период прогноза - не менее 12 месяцев`), an en dash inside numeric ranges (`1.2–1.5`), or rewrite the sentence — e.g. "Срок раскрытия … это риск для графика сделки" rather than "Срок раскрытия … — риск". Grep the finished text for "—" before delivery; any hit is a defect.
+- **The letter "ё" is not used.** Write "прошел", "еще", "объем", "отчетность", "зеленые", "учет". Grep for "ё"/"Ё" before delivery.
 - **Rule of three.** Don't force findings into triads ("во-первых, во-вторых, в-третьих" or three-item lists) just to look thorough — list exactly as many items as are actually distinct, even if that's two or four.
 - **Negative parallelism** ("это не просто X, это Y") — keep only when the contrast is substantively load-bearing (e.g. contrasting the old narrow corporate-dispute basis for раскрытие обеспечительных мер against a broader new basis is a real legal distinction worth stating this way); cut it when it's decorative.
 - **Vague attribution.** This skill's own citation discipline already bans this in substance (every claim needs a named, dated instrument or a "по данным СМИ" hedge with a real source) — but watch the softer version too: "участники рынка отмечают", "по мнению экспертов" without naming who, when the underlying material actually names a specific source. If you have the name, use it.
@@ -45,8 +46,12 @@ The humanizer skill's full pattern list (inflated significance, promotional lang
 ## Final pass before delivery
 
 1. Read the full draft once for content, once purely for rhythm — does it sound like something a person wrote at their desk, or like a template filled in?
-2. Count em dashes per paragraph; cut down any paragraph over the cap above.
+2. Mechanical greps, each of which must return zero hits: `—` (em dash), `ё`/`Ё`, double spaces.
 3. Grep for the banned-phrase list above and in the humanizer skill; replace or delete every hit.
-4. Check that no two consecutive subsections have identical sentence-count/paragraph-length shape.
-5. Confirm every hedge phrase is attached to a real analytical claim, not standing alone as filler.
-6. If `humanizer` is available as a skill, invoke it on the finished draft as a last independent check before delivering the file.
+4. Check that enumerations are rendered as bulleted lists rather than semicolon-chained prose.
+5. Check that no two consecutive subsections have identical sentence-count/paragraph-length shape.
+6. Confirm every hedge phrase is attached to a real analytical claim, not standing alone as filler.
+7. Confirm every placeholder is highlighted yellow and every defined term is bold italic at first use.
+8. If `humanizer` is available as a skill, invoke it on the finished draft as a last independent check before delivering the file.
+
+Note on this file's own prose: the guidance above is written for the model, not for the client, so it uses em dashes freely. The bans apply to delivered Russian-language client documents, not to these reference notes.
