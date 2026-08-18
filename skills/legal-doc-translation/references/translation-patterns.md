@@ -85,6 +85,16 @@ load-bearing, and promote to Section A once approved.
 | распространяется на | shall apply to | EN→RU | Standard for scope/applicability clauses | 2026-08-14 | successors clause, chat |
 | сторона SAPA | a/the SAPA party | EN→RU | Kept "SAPA" untranslated per user instruction, "party" translated normally | 2026-08-18 | chat |
 | waived (a condition) | отказалась от соблюдения (условия) | EN→RU | Not «отменены» — «waive a condition» is a party's election not to insist on it, not cancelling the condition itself | 2026-08-18 | chat |
+| Мерчант | Merchant | EN→RU | Provisional, open question — transliteration (fintech/payments industry usage) chosen over the formal regulatory term «торгово-сервисное предприятие» (ТСП, used in CBR/payment-system rules). Central, recurring defined term — confirm before it propagates further | 2026-08-18 | Transferred Merchants clause, chat |
+| Переданные Мерчанты | Transferred Merchants | EN→RU | Defined term | 2026-08-18 | Transferred Merchants clause, chat |
+| Мерчанты, Требующие Согласия | Consent-Required Merchants | EN→RU | Defined term | 2026-08-18 | Transferred Merchants clause, chat |
+| Замещающие Мерчанты | Substitution Merchants | EN→RU | Defined term | 2026-08-18 | Transferred Merchants clause, chat |
+| Существенный Передаваемый Договор | Material Transferred Contract | EN→RU | Defined term | 2026-08-18 | Transferred Merchants clause, chat |
+| Согласие Третьего Лица | Third Party Consent | EN→RU | Defined term, capitalized — matches the earlier "Third Party Claim"/«Требование третьего лица» capitalization convention | 2026-08-18 | Transferred Merchants clause, chat |
+| Существенное Соглашение | Material Agreement | EN→RU | Defined term, distinct from Material Transferred Contract | 2026-08-18 | Transferred Merchants clause, chat |
+| Группа Покупателя | the Purchaser Group | EN→RU | Defined term | 2026-08-18 | Third Party Consents condition, chat |
+| GMV Paid | GMV Paid | EN→RU | Provisional — left untranslated like SAPA; fintech-specific metric (paid Gross Merchandise Value) with no settled RU equivalent. Confirm before it recurs further | 2026-08-18 | Third Party Consents condition, chat |
+| действующего разумно | acting reasonably | EN→RU | Standard M&A reasonableness qualifier for a party's consent/acceptance | 2026-08-18 | Third Party Consents condition, chat |
 | Передаточное распоряжение | the Transfer Instrument | RU→EN | Defined term, capitalized | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 | Документы по Сделке | the Transaction Documents | RU→EN | Defined term, plural, capitalized; «Сделка» = Transaction | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 | Спор | the Dispute | RU→EN | Singular defined term collectively covering the plural list (disputes, disagreements, claims, demands) preceding it | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
