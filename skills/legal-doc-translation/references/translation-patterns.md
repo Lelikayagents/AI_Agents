@@ -85,6 +85,8 @@ load-bearing, and promote to Section A once approved.
 | требования и/или претензии | demands and/or claims | EN→RU | REVISED 2026-08-14 (see Section C): parallel-text evidence shows требования=demands, претензии=claims, not the original claims/complaints guess | 2026-08-14 | release clause, chat |
 | каких бы то ни было | whatsoever | EN→RU | Intensifier rendered explicitly, not dropped as untranslatable | 2026-08-14 | release clause, chat |
 | в отношении | with respect to | EN→RU | Over «касательно» / «применительно к» | 2026-08-14 | release clause, chat |
+| не вправе отказаться от исполнения Соглашения | shall not have the right to terminate the Agreement | RU→EN | Applies this document's confirmed real practice (терминировать, not "withdraw from") to the fuller ст. 450.1-style phrasing «отказаться от исполнения», not just the shorter «отказаться от Соглашения» seen before | 2026-08-19 | conditions clause, chat |
+| ACRA | ACRA | RU→EN | Left untranslated, like SAPA — Singapore's Accounting and Corporate Regulatory Authority, a recognizable acronym | 2026-08-19 | conditions clause, chat |
 | настоящий Договор | this Agreement | EN→RU | Defined term; «настоящий», not «данный» | 2026-08-14 | release clause, chat |
 | Вклад | the Contribution | EN→RU | Provisional — final choice depends on the contract's definition (вклад в уставный капитал / вклад в имущество / взнос) | 2026-08-14 | release clause, chat |
 | Во избежание сомнений | For the avoidance of doubt | EN→RU | Standard boilerplate opener; clean equivalent, not flagged | 2026-08-14 | chat |
