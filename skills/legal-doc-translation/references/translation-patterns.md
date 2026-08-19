@@ -24,6 +24,12 @@ an entry here, use that rendering. A locked entry (Section A) overrides your own
 instinct, a standard dictionary, and the defaults in Section F. Do not "improve"
 a locked rendering for style.
 
+**Lookup workflow for single-word requests, stated by the user (2026-08-19):**
+when the user gives a single word/term to translate, check this file first. If
+it isn't already recorded here, look it up on multitran.com (via WebFetch),
+preferring the юридический (legal/juridical) sense of the entry over general
+or other-domain senses. Record the result afterward per the workflow below.
+
 **After translating** — when the user corrects, replaces, or confirms a
 rendering, write it into this file in the same turn. A correction that is not
 recorded will be made again next week. Every entry needs a date and a short
