@@ -22,6 +22,11 @@ file locally after every turn as usual, but only `git commit` + `git push` once
 every 5 messages/turns (not after every single edit) to save tokens. Track
 turns-since-last-push mentally; batch the accumulated edits into one commit
 when the count is reached, or sooner if the user asks to see it pushed.
+Reconfirmed same day after a session Stop hook forced an out-of-cadence
+push (`stop-hook-git-check.sh` blocks turn completion while the repo has
+uncommitted changes): the user's choice is to keep batching regardless and
+accept that the hook may force intermediate pushes anyway — don't
+proactively push just because a hook-forced push seems likely.
 
 ## How to use this file
 
