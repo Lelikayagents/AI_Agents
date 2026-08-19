@@ -95,6 +95,9 @@ load-bearing, and promote to Section A once approved.
 | Группа Покупателя | the Purchaser Group | EN→RU | Defined term | 2026-08-18 | Third Party Consents condition, chat |
 | GMV Paid | GMV Paid | EN→RU | Provisional — left untranslated like SAPA; fintech-specific metric (paid Gross Merchandise Value) with no settled RU equivalent. Confirm before it recurs further | 2026-08-18 | Third Party Consents condition, chat |
 | действующего разумно | acting reasonably | EN→RU | Standard M&A reasonableness qualifier for a party's consent/acceptance | 2026-08-18 | Third Party Consents condition, chat |
+| Соглашение о Расторжении | the Termination Agreement | EN→RU | Provisional — uses «Соглашение» per this document's locked word for "Agreement", not «Договор» | 2026-08-18 | chat |
+| Дата Закрытия | the Completion Date | EN→RU | Provisional — matches the locked Закрытие=Completion pair | 2026-08-18 | chat |
+| к разумному удовлетворению X и Сторон | to X's and the Parties' reasonable satisfaction | EN→RU | Standard M&A boilerplate construction | 2026-08-18 | chat |
 | Передаточное распоряжение | the Transfer Instrument | RU→EN | Defined term, capitalized | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 | Документы по Сделке | the Transaction Documents | RU→EN | Defined term, plural, capitalized; «Сделка» = Transaction | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
 | Спор | the Dispute | RU→EN | Singular defined term collectively covering the plural list (disputes, disagreements, claims, demands) preceding it | 2026-08-18 | governing-law/dispute-resolution clause, parallel text |
