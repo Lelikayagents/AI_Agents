@@ -17,6 +17,12 @@ source left unspecified). Flag these as meaning-level defects, not style notes �
 they outrank terminology-consistency and register concerns when the two
 conflict.
 
+**Git commit/push cadence, stated by the user (2026-08-19):** keep editing this
+file locally after every turn as usual, but only `git commit` + `git push` once
+every 5 messages/turns (not after every single edit) to save tokens. Track
+turns-since-last-push mentally; batch the accumulated edits into one commit
+when the count is reached, or sooner if the user asks to see it pushed.
+
 ## How to use this file
 
 **Before translating** — read Sections A–E. If a source term or construction has
