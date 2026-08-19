@@ -88,6 +88,9 @@ load-bearing, and promote to Section A once approved.
 | настоящим | hereby | EN→RU | Standard opener for a self-executing declaration; not «этим», not dropped | 2026-08-14 | release clause, chat |
 | безусловно и безотзывно | unconditionally and irrevocably | EN→RU | Doublet kept as two adverbs rather than collapsed into one | 2026-08-14 | release clause, chat |
 | заявляет | declares | EN→RU | Unilateral declaration; deliberately not «заверяет», which invokes ст. 431.2 ГК РФ representations | 2026-08-14 | release clause, chat |
+| Отлагательное(-ые) Условие(-я) | Condition(s) Precedent | RU→EN | Confirmed twice — Indemnity clause and this conditions-satisfaction clause | 2026-08-19 | chat |
+| незамедлительно | immediately | RU→EN | Distinct from «в кратчайшие сроки» → "promptly"/"as soon as possible" (already used elsewhere) — незамедлительно is the stronger, "without delay" register; don't collapse the two | 2026-08-19 | chat |
+| выполнение (Отлагательного Условия) | satisfaction (of a Condition Precedent) | RU→EN | Standard M&A collocation — "satisfy a condition precedent" | 2026-08-19 | chat |
 | требования и/или претензии | demands and/or claims | EN→RU | REVISED 2026-08-14 (see Section C): parallel-text evidence shows требования=demands, претензии=claims, not the original claims/complaints guess | 2026-08-14 | release clause, chat |
 | каких бы то ни было | whatsoever | EN→RU | Intensifier rendered explicitly, not dropped as untranslatable | 2026-08-14 | release clause, chat |
 | в отношении | with respect to | EN→RU | Over «касательно» / «применительно к» | 2026-08-14 | release clause, chat |
