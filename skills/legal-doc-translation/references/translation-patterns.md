@@ -91,6 +91,7 @@ load-bearing, and promote to Section A once approved.
 | RU | EN | Direction | Why chosen | Added | Source |
 |---|---|---|---|---|---|
 | настоящим | hereby | EN→RU | Standard opener for a self-executing declaration; not «этим», not dropped | 2026-08-14 | release clause, chat |
+| при условии одобрения сделки | subject to approval of the Transaction | RU→EN | «Сделка» = Transaction (per Transaction Documents), «при условии» = "subject to" | 2026-08-19 | word-list lookup, chat |
 | безусловно и безотзывно | unconditionally and irrevocably | EN→RU | Doublet kept as two adverbs rather than collapsed into one | 2026-08-14 | release clause, chat |
 | заявляет | declares | EN→RU | Unilateral declaration; deliberately not «заверяет», which invokes ст. 431.2 ГК РФ representations | 2026-08-14 | release clause, chat |
 | Отлагательное(-ые) Условие(-я) | Condition(s) Precedent | RU→EN | Confirmed twice — Indemnity clause and this conditions-satisfaction clause | 2026-08-19 | chat |
