@@ -6,18 +6,47 @@ A digest is a periodic round-up of multiple legislative developments, written in
 
 Word `.docx` on the firm's template, same as an Alert. Not a slide deck. Build it with the `docx` skill's unzip-edit-rezip workflow on a copy of the firm template so the numbering definitions and styles come across intact.
 
-The whole document is one auto-numbered outline driven by a single numbering definition, so numbering (1 → 1.1 → a. → i.) is produced by the styles, not typed by hand. Continuation paragraphs — the body of an item, a citation line — carry the same style as the level they belong to plus `<w:numId w:val="0"/>`, which suppresses the number while keeping the indent.
+The whole document is one auto-numbered outline driven by a single numbering definition, so numbering (1 → 1.1 → a. → i.) is produced by the styles, not typed by hand. Continuation paragraphs — the body of an item, a citation line — carry the same style as the level they belong to plus a number-suppressing `numPr`.
 
 | Level | Style ID | What it holds | Rendered as |
 |---|---|---|---|
 | Cover | `Normal` | title, period line, framing sentence | unnumbered |
 | L1 | `SBLENGL1` | priority tag (ОСОБЕННО ВАЖНО и т.д.), bold caps | `1.` `2.` `3.` |
-| L2 | `SBLENGL2` | item headline; item body paragraphs with `numId 0` | `1.1` `1.2` |
-| L3 | `SBLENGL3` | lettered sub-items; citation line with `numId 0` | `a.` `b.` |
+| L2 | `SBLENGL2` | item headline; item body paragraphs, suppressed | `1.1` `1.2` |
+| L3 | `SBLENGL3` | lettered sub-items; citation line, suppressed | `a.` `b.` |
 | L4 | `SBLENGL4` | roman sub-sub-items | `i.` `ii.` |
 | L5 | `SBLRUSL5` | deepest nesting, used rarely | `A.` `B.` |
 
 Never type the numbers into the text — set the style and let Word number the paragraph.
+
+### Building a continuation paragraph correctly
+
+Suppressing the number takes three things together, and leaving any of them out produces a visibly wrong document:
+
+```xml
+<w:pPr>
+  <w:pStyle w:val="SBLENGL2"/>
+  <w:numPr><w:ilvl w:val="0"/><w:numId w:val="0"/></w:numPr>
+  <w:ind w:left="720" w:firstLine="0"/>
+  <w:rPr><w:b w:val="0"/><w:bCs w:val="0"/><w:rFonts w:cstheme="minorHAnsi"/><w:sz w:val="24"/><w:szCs w:val="24"/></w:rPr>
+</w:pPr>
+```
+
+- **`numId 0`** removes the number.
+- **`w:firstLine="0"`** cancels the hanging indent the numbering would otherwise leave behind. Without it the paragraph hangs out to the left of the item it belongs to.
+- **`<w:b w:val="0"/><w:bCs w:val="0"/>`, repeated on every run in the paragraph**, is required because `SBLENGL1` and `SBLENGL2` are bold styles. Without the override the whole body of an item renders bold. `SBLENGL3` and `SBLENGL4` are not bold, so they need no override.
+- Every run also carries `<w:rFonts w:cstheme="minorHAnsi"/><w:sz w:val="24"/><w:szCs w:val="24"/>` to match the rest of the document.
+
+Indent values observed in the client files:
+
+| Paragraph | `w:left` |
+|---|---|
+| Item body under a headline (`SBLENGL2`, suppressed) | `720` |
+| Citation line at the end of an item (`SBLENGL3`, suppressed) | `720` |
+| Prose continuing after a lettered list (`SBLENGL3`, suppressed) | `1440` |
+| Prose continuing after a roman list (`SBLENGL4`, suppressed) | `2160` |
+
+When an item has no lettered list at all, a trailing line such as "Судебное заседание назначено на …" stays at `SBLENGL2`/`720` rather than dropping to `SBLENGL3`.
 
 ## Text conventions
 
@@ -47,10 +76,24 @@ Each item is a self-contained block with this exact shape, in this order:
    - Court decision: `Определение/Постановление [суд, коллегия] от DD.MM.YYYY № [case-court-number] по делу № [case number]`
    - Presidential order: `Распоряжение Президента Российской Федерации от DD.MM.YYYY № XXX-рп «[title]»`
    - If the fact comes from press reporting rather than the primary legal text, add a separate line **"Материал СМИ"** (or a link/reference to it) and hedge the claim in the body with "по данным СМИ" — never present media speculation with the same certainty as a primary-source fact.
+   - Where the official text is online, make the citation line a hyperlink (`publication.pravo.gov.ru`, `sozd.duma.gov.ru`, the regulator's own site). A citation without a link is acceptable; a wrong or invented link is not.
 
 ## Continuity between issues
 
+The coverage window starts the day after the previous issue's window ends, so ask for or check the previous issue before choosing the period. Do not leave gaps.
+
 When a development already covered in a previous digest has progressed (e.g. a bill moves from first to second/third reading), open the item with a short pointer — *"Подробнее о законопроекте мы писали ранее"* — then give only the delta, not a re-explanation of the whole thing.
+
+A development that fell inside the previous window but was not covered there can be picked up in the current issue rather than dropped. Say so when handing the draft over, so the reviewer knows why an item is dated before the period line.
+
+## Where to research
+
+- **КонсультантПлюс legal news** (`consultant.ru/legalnews/`) is the workhorse. Its weekly "Важные новости для юриста за неделю с … по …" round-ups cover the period in blocks and each item names its source act with number and date. Pull every weekly round-up that overlaps the window; the list is paginated (`?page=N`).
+- **Судебная практика СКЭС ВС РФ** (`t.me/vs_court`, readable without login at `t.me/s/vs_court`) gives Supreme Court economic-chamber matters with case numbers, facts and the court's reasoning. Distinguish two kinds of post: an **определение о передаче** means the case is only scheduled for a hearing, so write it as "ВС РФ рассмотрит спор о …" and give the hearing date; a post with a "Позиция Верховного суда" block is a decided case and can be reported as a holding.
+- **publication.pravo.gov.ru** carries official texts and is the right target for a citation hyperlink when the document number is known.
+- Право.ру, ККПМ, Better Chance and similar channels are usable, but paraphrase rather than copy, and prefer citing the underlying act.
+
+Several legal databases block automated access from this environment (`cbr.ru`, `garant.ru` document pages, `pravo.gov.ru` document listings return 403). When a needed text is unreachable, take the facts from КонсультантПлюс's summary of it and cite the act itself, rather than dropping the item.
 
 ## Register
 
