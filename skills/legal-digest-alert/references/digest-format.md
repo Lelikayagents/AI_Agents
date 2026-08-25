@@ -54,9 +54,21 @@ The rules in `references/writing-style.md` apply in full, and the same hard bans
 
 ## Cover
 
-- Title: **"Обзор изменений законодательства РФ"** (the earlier version of this file said "Дайджест изменений законодательства РФ"; the client-facing wording actually in use is "Обзор").
-- Period line: **"С [date] по [date] [месяц] [year] года"** — matches the exact coverage window, no gaps or overlaps with the previous issue.
-- One fixed framing sentence (reuse verbatim, only vary the practice areas if the scope genuinely differs): *"Представляем вашему вниманию дайджест наиболее интересных и значимых законодательных изменений в области корпоративного, финансового, а также в других отраслях права, которые могут затронуть ваш бизнес."*
+All three cover paragraphs use the `Normal` style with direct formatting on top — they are not headings, and the `Title` style is not used.
+
+| Paragraph | Text | Formatting |
+|---|---|---|
+| Title | **"Обзор изменений законодательства РФ"** | `<w:jc w:val="center"/>`, runs **bold** |
+| Period line | **"С [date] по [date] [месяц] [year] года"** | `<w:jc w:val="center"/>`, not bold |
+| Framing sentence | fixed wording, see below | `<w:ind w:left="0"/>`, not bold, not centred |
+
+Every run on the cover carries `<w:rFonts w:cstheme="minorHAnsi"/><w:sz w:val="24"/><w:szCs w:val="24"/>`, like the rest of the document. Leaving the cover as bare `Normal` paragraphs is wrong: the title then renders left-aligned and in body weight, which is the first thing a reviewer notices.
+
+The earlier version of this file gave the title as "Дайджест изменений законодательства РФ"; the client-facing wording actually in use is "Обзор".
+
+The period line matches the exact coverage window, with no gaps or overlaps with the previous issue.
+
+The framing sentence is reused verbatim, varying the practice areas only if the scope genuinely differs: *"Представляем вашему вниманию дайджест наиболее интересных и значимых законодательных изменений в области корпоративного, финансового, а также в других отраслях права, которые могут затронуть ваш бизнес."*
 
 ## Item structure (repeats for every development)
 
