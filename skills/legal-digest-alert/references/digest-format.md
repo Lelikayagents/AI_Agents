@@ -48,9 +48,23 @@ Indent values observed in the client files:
 
 When an item has no lettered list at all, a trailing line such as "Судебное заседание назначено на …" stays at `SBLENGL2`/`720` rather than dropping to `SBLENGL3`.
 
+### Court-practice items
+
+`СУДЕБНАЯ ПРАКТИКА` covers decided cases as well as pending ones, and first-instance courts as well as the ВС РФ — a well-reasoned arbitrazh-court ruling on a live question (e.g. whether sanctions make an ICC arbitration clause unenforceable) belongs there on its merits. Shape for a decided case:
+
+1. Headline at `SBLENGL2`, agent-first and stating the outcome ("Арбитражный суд оставил без рассмотрения иск иностранного поставщика, отклонив довод о неисполнимости арбитражной оговорки из-за санкций.").
+2. Facts, then each side's position, as suppressed `SBLENGL2` paragraphs at `720`.
+3. A lead-in ("Суд оставил иск без рассмотрения и указал следующее:") followed by the court's reasoning as lettered `SBLENGL3` items — one ground per item, each naming the authority it rests on with number and date.
+4. Procedural tail (returned госпошлина and similar) as a suppressed `SBLENGL3` paragraph at `1440`, since it follows the lettered list.
+5. Citation line at `SBLENGL3`/`720`.
+
+For a pending case (an **определение о передаче**) the shape stops at the parties' positions and closes with "Судебное заседание назначено на …" — do not write the outcome as a holding.
+
 ## Text conventions
 
-The rules in `references/writing-style.md` apply in full, and the same hard bans as for Alerts: **no "ё" and no em dash "—" anywhere** in the delivered text (hyphen with spaces instead; en dash only inside numeric ranges). Defined terms introduced with `(далее – «X»)` are set in bold italic; placeholders awaiting a real number or date are highlighted yellow.
+The rules in `references/writing-style.md` apply in full, and the same hard bans as for Alerts: **no "ё" and no em dash "—" anywhere** in the delivered text (hyphen with spaces instead; en dash only inside numeric ranges). Defined terms introduced with `(далее - «X»)` are set in **bold italic** — italic alone is wrong, and the bold+italic run covers the guillemets too: ***«Указ № 604»***. Placeholders awaiting a real number or date are highlighted yellow.
+
+Unlike an Alert, a digest's lettered and roman lists do **not** take "и" before the final item. Every item ends with a plain semicolon and the last one with a full stop.
 
 ## Cover
 
