@@ -119,7 +119,31 @@ A development that fell inside the previous window but was not covered there can
 - **publication.pravo.gov.ru** carries official texts and is the right target for a citation hyperlink when the document number is known.
 - Право.ру, ККПМ, Better Chance and similar channels are usable, but paraphrase rather than copy, and prefer citing the underlying act.
 
-Several legal databases block automated access from this environment (`cbr.ru`, `garant.ru` document pages, `pravo.gov.ru` document listings return 403). When a needed text is unreachable, take the facts from КонсультантПлюс's summary of it and cite the act itself, rather than dropping the item.
+Several legal databases block automated access from this environment (`cbr.ru`, `garant.ru` document pages, `pravo.gov.ru` document pages, files and API all return 403). When a needed text is unreachable, take the facts from КонсультантПлюс's summary of it and cite the act itself, rather than dropping the item.
+
+### Recovering a document КонсультантПлюс's summary is too thin for
+
+When the user gives a `publication.pravo.gov.ru` link (403) and the annotation on `consultant.ru/law/hotdocs` is one sentence, the **full text is usually reachable anyway**, in three steps:
+
+1. `consultant.ru/law/hotdocs/?date_start=DD.MM.YYYY&date_end=DD.MM.YYYY&page=N` - strip the tags and grep the listing for the topic word. This gives the act's exact number, date and official title.
+2. The listing links a per-document annotation page, `consultant.ru/law/hotdocs/<id>.html`, which carries the annotation plus a `consultant.ru/document/cons_doc_LAW_<n>` link.
+3. That document page lists the act's sections as `/document/cons_doc_LAW_<n>/<hash>/` sub-pages. Fetching each sub-page gives the **operative text verbatim** - which paragraph of which annex is restated, what the new clause says, what deadline it sets. This is what turns a one-line annotation into a real lettered breakdown.
+
+### Reading a law firm's redline PDF
+
+Legal-update PDFs from firms (Better Chance and similar) are often a redline of the old instrument against the new one. `pdftotext` silently interleaves deleted and inserted text, which produces nonsense like "от 21 мая 202529 июня 2026 г. N 70607402-У" and, worse, makes it easy to report a deleted threshold as the current one. Extract by span colour instead:
+
+```python
+import pymupdf
+d = pymupdf.open('file.pdf')
+for p in d:
+    for b in p.get_text('dict')['blocks']:
+        for l in b.get('lines', []):
+            for s in l['spans']:
+                print(s['color'], s['text'])   # red = deleted, coloured = inserted, 0 = unchanged
+```
+
+Old text always precedes new text in the interleaved stream, so the second of a pair is the rule in force. Verify any figure that changed by locating the surviving black text around it before writing a number into the digest.
 
 ## Register
 
