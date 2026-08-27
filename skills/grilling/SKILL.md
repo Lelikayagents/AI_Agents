@@ -57,6 +57,19 @@ Do not block on fact-finding. A running exploration is an unsettled prerequisite
 
 "Не знаю" is a real answer. Treat it as a signal that the question cannot be settled by talking, and say what would settle it: a document to pull, a number to look up, a prototype to build, a call to make. Do not rephrase the same question three ways to extract a guess.
 
+## Playbooks
+
+`references/playbooks.md` carries the concrete decision trees for the three
+task shapes this repository handles: a digest or alert, a targeted legal
+question, and an ordinary non-legal question. It also carries the threshold
+test for when *not* to open a session at all. Read it before grilling one of
+those, rather than improvising a tree.
+
+The threshold in one line: **would the work change depending on an answer I
+do not have?** If no, answer the question. If yes and the answer is public,
+go and find it. Only if yes and only the user can know it does a session
+start.
+
 ## Seed axes for this repository
 
 The tree is built from the subject, not from a checklist. These are starting branches that have proved load-bearing here, not a script, and most sessions will discover branches worth more than any of them:
