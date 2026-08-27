@@ -27,9 +27,13 @@ The unifying discipline: **look where nobody is reading.** Most of what is genui
 
 Model training data is stale by definition and market facts rot fast: prices, funding rounds, market shares, regulations, who owns whom. **Search before writing, for every factual layer of the report**, including things you are confident about. State the as-of date next to figures that move (a market size, a headcount, a price, a share). If a figure is older than roughly 18 months and nothing newer exists, say so at the point it is used, not in a footnote.
 
-## Intake — the brief before the research
+## Intake — grill the brief before researching
 
-Research aimed at the wrong decision is wasted no matter how good it is. Before starting, get these settled — from what the user already wrote where possible, by asking where not:
+Research aimed at the wrong decision is wasted no matter how good it is, and a vague brief is the single most common reason a deep report lands flat.
+
+**Run a grilling session first.** Read `skills/grilling/SKILL.md` in this repository and follow it: build the decision tree for this brief, ask the frontier in rounds with a recommended answer on each question, look up every fact yourself instead of asking about it, and stop for the user's confirmation before any research starts. Naming that skill does not reliably load it, so read the file rather than assuming it is in context.
+
+The branches that carry most of the weight for a research brief, as a starting point rather than a script:
 
 1. **Which decision does this feed?** Invest / launch / price / hire / enter a market / walk away. "Просто интересно" is a legitimate answer, but it changes the deliverable.
 2. **Whose money and whose risk?** The user's own company, a client, an investor, a personal bet.
@@ -37,10 +41,14 @@ Research aimed at the wrong decision is wasted no matter how good it is. Before 
 4. **Segment and buyer.** B2C / B2B / B2G, and specifically who signs.
 5. **Constraints.** Capital available, time horizon, team, licences already held, hard no-go zones.
 6. **What has already been tried or read**, so the report does not spend its length restating what the user knows.
+7. **What result would change the user's mind**, which is what tells you where to aim the evidence.
 
-Ask these as a short block of questions, not one at a time, and do not stall on them: if the user does not answer, proceed under explicitly stated assumptions listed at the top of the report. Volunteering the research beats waiting for a perfect brief.
+Two adjustments this skill makes to the plain grilling session:
 
-> If a dedicated interrogation skill (`grill-me` or equivalent) is available in this repository or the user's enabled skills, run it in place of this section — it supersedes these six questions. This section is the fallback, not a competitor to it.
+- **Look before you ask.** Company revenue, headcount, ownership, licence status, the text of an act, who the competitors even are: these are facts, so pull them from the registers in `references/source-playbook.md` and bring them into the next round. Asking the user for a number that is public is the fastest way to lose their confidence.
+- **Do not stall the research on a perfect brief.** If the user disengages or answers "делай как считаешь нужным", proceed under assumptions stated explicitly at the top of the report. Volunteering the research beats waiting.
+
+When the user has an idea too loose to grill productively, that is not a reason to skip the session: vagueness is what it consumes.
 
 ## Workflow
 
