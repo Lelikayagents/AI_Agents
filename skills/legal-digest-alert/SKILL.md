@@ -1,0 +1,35 @@
+---
+name: legal-digest-alert
+description: Research Russian legislative and regulatory developments and turn that research into client-facing deliverables in Stonebridge Legal's established formats — a periodic multi-item "Обзор изменений законодательства РФ", a single-topic advisory "Alert", or a справка answering one client question, all delivered as Word memos on the firm template — then revise them against the user's feedback. Drafts are written to read as human-written from the start (see references/writing-style.md), not polished afterward. Use whenever the user asks to compile, draft, or update a "дайджест", "Alert", or "справка", asks for a legislative round-up or single-topic legal brief for a client, or wants an existing one edited. See references/digest-format.md and references/alert-format.md for the exact templates this skill follows.
+---
+
+# Legal digest / Alert / справка
+
+## Three deliverable types
+
+| Type | Register | Scope | Closing section |
+|---|---|---|---|
+| **Дайджест** | Neutral, third person, reporting only | Multiple developments over a period | None — no recommendations |
+| **Alert** | First-person-plural, advisory ("мы полагаем...") | One development, deep dive | Mandatory "Наши предложения и рекомендации" |
+| **Справка** | Same as Alert | One client question, treated as the "development" | Mandatory recommendations — a справка without a practical answer isn't useful |
+
+Read `references/digest-format.md` or `references/alert-format.md` in full before drafting either — they carry the exact document shape, Word style IDs, citation formats, and the specific fixed wording (titles, framing sentences, footer, contact block) that must be reproduced verbatim, not paraphrased. Read `references/writing-style.md` too — it's not optional polish, it's the register this skill writes in from the first draft.
+
+`alert-format.md` was revised after a partner edit-pass over a real Alert draft; where it records a convention as coming from that markup (numbered `SBLRUSL1` headings, no em dashes, no "ё", yellow-highlighted placeholders, bold-italic defined terms, lists over dense prose, no drafting-history commentary), treat it as settled rather than re-deriving it.
+
+Don't blend the registers: a digest item must not editorialize, and an Alert/справка must not skip its recommendations section for the sake of sounding neutral.
+
+## Workflow
+
+1. **Clarify scope** if not already given: which deliverable type, the coverage period (digest) or the specific instrument/question (Alert/справка), and which practice areas matter to this client.
+2. **Research.** Pull primary sources — bill texts, regulator instructions/decrees/orders, court decisions — with exact numbers and dates. Use the Legal Data Hunter MCP tool where it covers the jurisdiction/instrument; for anything sourced from press reporting rather than a primary legal text, keep that distinction explicit (see the digest's "Материал СМИ" rule) rather than presenting it with primary-source certainty.
+3. **For a digest**, sort findings into the three tags (ОСОБЕННО ВАЖНО / ТАКЖЕ ИНТЕРЕСНО / СУДЕБНАЯ ПРАКТИКА) and check the previous issue, if the user has or references one, so continuing items open with a delta pointer instead of restating the whole history.
+4. **For an Alert/справка**, group findings into bespoke thematic subsections, and don't compress away analysis of any nuance, ambiguity, or apparent drafting conflict — that depth is the deliverable's value.
+5. **Draft.** Follow the matched reference file's structure exactly: fixed wording where the template specifies it verbatim, exact citation formats, correct nesting of `(a)(b)(c)` / `(i)(ii)(iii)` sub-items mirroring the source, and the mandatory footer/contact block content (reuse the firm's real details from `alert-format.md` — never invent placeholder contact info or a placeholder logo).
+6. **Output format.** All three deliverables are **Word `.docx` on the firm's template** — none of them is a slide deck. Use the `docx` skill's unzip-edit-rezip workflow on a copy of the template so its `styles.xml`, numbering definitions, header and footer come across intact; never generate a document from scratch. Styles differ by deliverable: an Alert/справка uses `SBLParaHeadingv1` for the title, `SBLRUSL1` for numbered section headings and `BodyText` for prose; a digest uses the `SBLENGL1`–`SBLENGL4` outline so all numbering is produced by the styles. See the matching reference file for the full table. If the user hasn't approved the content yet, or asks for a quick draft, it's fine to write the text out in chat/markdown first for fast review, then produce the branded file once the content is settled — say which mode you're in so the user knows whether they're reviewing content or the final artifact.
+7. **Anti-AI-tell pass.** Before delivering any draft — in chat or as a `.docx` — check it against `references/writing-style.md` and run its mechanical greps: zero em dashes "—", zero "ё", zero double spaces. This is a required step, not optional cleanup, and applies to the very first draft, not just later revisions.
+8. **Revise.** When the user pushes back on wording, structure, or emphasis, treat their correction as an update to how *this* skill should behave next time too, not just a one-off fix — apply it consistently across the rest of the current draft.
+
+## Citation discipline
+
+Every legal instrument, case, or bill named must carry its full official title, number, and date verbatim at the point it's introduced — same discipline as this repo's `legal-doc-translation` skill treats defined terms and structural references: never paraphrase a title, drop a number, or renumber a citation.
