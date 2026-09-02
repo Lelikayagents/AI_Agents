@@ -62,7 +62,7 @@ For a pending case (an **определение о передаче**) the shape
 
 ## Text conventions
 
-The rules in `references/writing-style.md` apply in full, and the same hard bans as for Alerts: **no "ё" and no em dash "—" anywhere** in the delivered text (hyphen with spaces instead; en dash only inside numeric ranges). Defined terms introduced with `(далее - «X»)` are set in **bold italic** — italic alone is wrong, and the bold+italic run covers the guillemets too: ***«Указ № 604»***. Placeholders awaiting a real number or date are highlighted yellow.
+The rules in `references/writing-style.md` apply in full, and the same hard bans as for Alerts: **no "ё" and no em dash "—" anywhere** in the delivered text. Inside a defined-term parenthetical the digest uses an **en dash**: `(далее – «Указ № 604»)`. Everywhere else in running text a dash is a **hyphen with spaces**. Defined terms themselves are set in **bold italic** - italic alone is wrong, and the bold+italic run covers the guillemets too: ***«Указ № 604»***. Placeholders awaiting a real number or date are highlighted yellow.
 
 Unlike an Alert, a digest's lettered and roman lists do **not** take "и" before the final item. Every item ends with a plain semicolon and the last one with a full stop.
 
@@ -144,6 +144,22 @@ for p in d:
 ```
 
 Old text always precedes new text in the interleaved stream, so the second of a pair is the rule in force. Verify any figure that changed by locating the surviving black text around it before writing a number into the digest.
+
+### Entry into force is read from the act's last article, never from a summary
+
+The most damaging error found in a partner review of a digest was an inverted commencement date: the item said the law "вступает в силу с 1 октября 2026 года, за исключением отдельных положений", when its final article said the opposite - in force on publication, with one article deferred to 1 October. КонсультантПлюс's annotation and the press coverage both stated the deferred date prominently, and neither made clear which half was the exception.
+
+So for every act in a digest, open its **final article** (`Статья N` on the last `cons_doc_LAW_<n>/<hash>/` sub-page) and read the commencement clause verbatim. The pattern "вступает в силу со дня официального опубликования, за исключением статьи X … Статья X вступает в силу с [date]" is common and inverts easily. Name in the item which provision carries the deferred date, not just the date.
+
+Where an act carries no commencement clause at all, do not present the default as if it came from the document: say so and cite the default rule, e.g. "Специальной нормы о вступлении в силу постановление не содержит, поэтому по общему правилу п. 6 Указа Президента РФ от 23.05.1996 № 763 оно вступает в силу по истечении 7 дней после дня официального опубликования."
+
+### An item's own numbers must reconcile
+
+A reviewer will divide the figures in an item by each other. If a court reduced an award to a stated sum, the facts quoted in the item have to produce that sum: when the digest gave the plot area as the claimant's 800 кв. м but the appellate court had computed from the technical passport's 252 кв. м and the 915 336 руб. 30 коп. actually paid, the arithmetic was out by a factor of four and the item read as wrong even though every individual number was accurate. Before delivery, recompute any figure the item implies, and if a source uses two different values for the same quantity, give both and say whose each is.
+
+### Preserving hyperlinks when rebuilding a paragraph
+
+Citation lines are hyperlinks. Rebuilding a paragraph from its `<w:pPr>` plus a fresh run silently drops the `<w:hyperlink>` wrapper (or the `fldChar`/`instrText` field pair, which is how Word writes them when the link was typed rather than inserted from a rel). After any batch of paragraph-level edits, count `<w:hyperlink` and `HYPERLINK` occurrences against the original and restore anything lost.
 
 ## Register
 
