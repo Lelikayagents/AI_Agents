@@ -157,6 +157,22 @@ Where an act carries no commencement clause at all, do not present the default a
 
 A reviewer will divide the figures in an item by each other. If a court reduced an award to a stated sum, the facts quoted in the item have to produce that sum: when the digest gave the plot area as the claimant's 800 кв. м but the appellate court had computed from the technical passport's 252 кв. м and the 915 336 руб. 30 коп. actually paid, the arithmetic was out by a factor of four and the item read as wrong even though every individual number was accurate. Before delivery, recompute any figure the item implies, and if a source uses two different values for the same quantity, give both and say whose each is.
 
+### A second lettered list inside one item
+
+`SBLENGL3` letters restart only when the level above advances, so a second lettered list inside the same `SBLENGL2` item continues from where the first stopped: (a)-(d) for the first list, then (e)-(i) for the second. To restart it, add one `w:num` to `numbering.xml` pointing at the same `abstractNumId` with a start override at the letter level, then put that `numId` on **every** paragraph of the second list:
+
+```xml
+<!-- numbering.xml -->
+<w:num w:numId="7"><w:abstractNumId w:val="0"/>
+  <w:lvlOverride w:ilvl="2"><w:startOverride w:val="1"/></w:lvlOverride></w:num>
+```
+```xml
+<!-- each paragraph of the second list -->
+<w:pStyle w:val="SBLENGL3"/><w:numPr><w:ilvl w:val="2"/><w:numId w:val="7"/></w:numPr>
+```
+
+Lists elsewhere in the document stay on the original `numId` and keep their own restart behaviour. Check the ilvl and numId the styles actually use before copying these values: in the firm template `SBLENGL1`-`SBLENGL4` are ilvl 0-3 on `numId 2` (abstractNum 0).
+
 ### Preserving hyperlinks when rebuilding a paragraph
 
 Citation lines are hyperlinks. Rebuilding a paragraph from its `<w:pPr>` plus a fresh run silently drops the `<w:hyperlink>` wrapper (or the `fldChar`/`instrText` field pair, which is how Word writes them when the link was typed rather than inserted from a rel). After any batch of paragraph-level edits, count `<w:hyperlink` and `HYPERLINK` occurrences against the original and restore anything lost.
