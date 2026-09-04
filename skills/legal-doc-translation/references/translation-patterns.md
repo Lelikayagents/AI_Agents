@@ -96,6 +96,8 @@ load-bearing, and promote to Section A once approved.
 | безусловно и безотзывно | unconditionally and irrevocably | EN→RU | Doublet kept as two adverbs rather than collapsed into one | 2026-08-14 | release clause, chat |
 | заявляет | declares | EN→RU | Unilateral declaration; deliberately not «заверяет», which invokes ст. 431.2 ГК РФ representations | 2026-08-14 | release clause, chat |
 | Отлагательное(-ые) Условие(-я) | Condition(s) Precedent | RU→EN | Confirmed twice — Indemnity clause and this conditions-satisfaction clause | 2026-08-19 | chat |
+| расчетный счет | settlement account | RU→EN | Standard RU-banking term of art | 2026-08-19 | word-list lookup, chat |
+| Обществу с ограниченной ответственностью | a/the Limited Liability Company | RU→EN | Generic legal-form phrase (ООО spelled out), NOT necessarily the same as the earlier flagged «Общество» in "выпиской по счету Общества" — that one is still an open question, this occurrence just names the entity type generically | 2026-08-19 | word-list lookup, chat |
 | незамедлительно | immediately | RU→EN | Distinct from «в кратчайшие сроки» → "promptly"/"as soon as possible" (already used elsewhere) — незамедлительно is the stronger, "without delay" register; don't collapse the two | 2026-08-19 | chat |
 | выполнение (Отлагательного Условия) | satisfaction (of a Condition Precedent) | RU→EN | Standard M&A collocation — "satisfy a condition precedent" | 2026-08-19 | chat |
 | требования и/или претензии | demands and/or claims | EN→RU | REVISED 2026-08-14 (see Section C): parallel-text evidence shows требования=demands, претензии=claims, not the original claims/complaints guess | 2026-08-14 | release clause, chat |
