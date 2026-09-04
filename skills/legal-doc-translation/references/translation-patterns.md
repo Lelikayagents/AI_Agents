@@ -102,6 +102,7 @@ load-bearing, and promote to Section A once approved.
 | по курсу | at the rate of | EN→RU | Standard for FX rate references | 2026-08-19 | chat |
 | справка о валютных операциях | foreign exchange certificate | EN→RU | Standard Russian currency-control (валютный контроль) document type | 2026-08-19 | chat |
 | в Банке | with the Bank | EN→RU / RU→EN | Confirmed twice now (also in the bank-statement phrase) — «Банк» capitalized, likely a defined term | 2026-08-19 | chat |
+| Денежные средства | the Funds | RU→EN | Capitalized defined term — distinct from lowercase "funds" used generically in the FX-conversion paragraph just before | 2026-08-19 | word-list lookup, chat |
 | незамедлительно | immediately | RU→EN | Distinct from «в кратчайшие сроки» → "promptly"/"as soon as possible" (already used elsewhere) — незамедлительно is the stronger, "without delay" register; don't collapse the two | 2026-08-19 | chat |
 | выполнение (Отлагательного Условия) | satisfaction (of a Condition Precedent) | RU→EN | Standard M&A collocation — "satisfy a condition precedent" | 2026-08-19 | chat |
 | требования и/или претензии | demands and/or claims | EN→RU | REVISED 2026-08-14 (see Section C): parallel-text evidence shows требования=demands, претензии=claims, not the original claims/complaints guess | 2026-08-14 | release clause, chat |
