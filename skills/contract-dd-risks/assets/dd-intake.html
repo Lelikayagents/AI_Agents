@@ -1,0 +1,713 @@
+<title>DD-бриф по договорам</title>
+<meta name="description" content="Интерактивный опрос для запуска red flag review договорной базы">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#EEF1EF;
+    --surface:#FFFFFF;
+    --surface-muted:#F4F6F4;
+    --ink:#1B2430;
+    --ink-muted:#5B6570;
+    --accent:#2F5D50;
+    --accent-soft:#DCE8E2;
+    --accent-contrast:#FFFFFF;
+    --line:#D7DBD6;
+    --danger:#A5442E;
+    --warn:#93650A;
+    --radius:10px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12181A;
+      --surface:#1A2224;
+      --surface-muted:#202A2C;
+      --ink:#E7ECE9;
+      --ink-muted:#94A19B;
+      --accent:#7FCBAA;
+      --accent-soft:#223129;
+      --accent-contrast:#0E1513;
+      --line:#2A3336;
+      --danger:#E08468;
+      --warn:#E0B85B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12181A;
+    --surface:#1A2224;
+    --surface-muted:#202A2C;
+    --ink:#E7ECE9;
+    --ink-muted:#94A19B;
+    --accent:#7FCBAA;
+    --accent-soft:#223129;
+    --accent-contrast:#0E1513;
+    --line:#2A3336;
+    --danger:#E08468;
+    --warn:#E0B85B;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.5;
+    padding:32px 20px 64px;
+  }
+  .wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:28px;}
+
+  h1,h2,h3{font-family:'Spectral', Georgia, serif;text-wrap:balance;margin:0;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 8px;
+  }
+  header h1{font-size:clamp(26px,4vw,34px);font-weight:600;color:var(--ink);}
+  header p{margin:10px 0 0;color:var(--ink-muted);max-width:60ch;font-size:15px;}
+
+  .tracker{display:flex;align-items:center;gap:0;}
+  .tracker .step{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+  .tracker .dot{
+    width:28px;height:28px;border-radius:50%;
+    border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;
+    color:var(--ink-muted);background:var(--surface);flex:none;
+  }
+  .tracker .label{font-size:13px;color:var(--ink-muted);white-space:nowrap;}
+  .tracker .bar{flex:1 1 auto;height:1.5px;background:var(--line);margin:0 10px;min-width:16px;}
+  .tracker .step.active .dot{border-color:var(--accent);color:var(--accent-contrast);background:var(--accent);}
+  .tracker .step.active .label{color:var(--ink);font-weight:600;}
+  .tracker .step.done .dot{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+  .tracker .step.done .dot::after{content:"✓";}
+  .tracker .step.done .dot span{display:none;}
+
+  section.round{display:flex;flex-direction:column;gap:16px;}
+  section.round[hidden]{display:none;}
+
+  .summary-strip[hidden]{display:none;}
+  .summary-strip{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:var(--surface-muted);
+    padding:14px 16px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 14px;
+    align-items:center;
+    font-size:13.5px;
+  }
+  .summary-strip .chip{color:var(--ink);}
+  .summary-strip .chip b{font-weight:600;color:var(--ink-muted);font-weight:500;}
+  .summary-strip .edit{
+    margin-left:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--accent);
+    background:none;border:none;cursor:pointer;padding:4px 0;
+    text-decoration:underline;text-underline-offset:3px;
+  }
+  .summary-strip .edit:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .card .qnum{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;color:var(--accent);letter-spacing:.04em;
+    margin:0 0 6px;
+  }
+  .card h3{font-size:18px;font-weight:600;margin-bottom:6px;}
+  .card .body{color:var(--ink-muted);font-size:14.5px;margin-bottom:14px;}
+
+  .opt{
+    display:flex;align-items:flex-start;gap:10px;
+    padding:10px 12px;border-radius:8px;
+    border:1px solid transparent;
+    cursor:pointer;
+  }
+  .opt:hover{background:var(--surface-muted);}
+  .opt input{margin-top:3px;accent-color:var(--accent);flex:none;}
+  .opt .opt-label{font-size:14.5px;color:var(--ink);}
+  .opt .rec-tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--accent);background:var(--accent-soft);
+    border-radius:5px;padding:2px 6px;margin-left:8px;
+    vertical-align:middle;
+  }
+  .opt.priority .opt-label::after{
+    content:"начать с этого";
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.03em;
+    color:var(--warn);margin-left:8px;
+  }
+  .detail-input, textarea.freetext{
+    width:100%;margin-top:8px;
+    font-family:'IBM Plex Sans',sans-serif;font-size:14px;
+    color:var(--ink);background:var(--surface-muted);
+    border:1px solid var(--line);border-radius:7px;
+    padding:9px 11px;
+  }
+  textarea.freetext{min-height:64px;resize:vertical;}
+  .detail-input:focus, textarea.freetext:focus, .opt input:focus-visible{
+    outline:2px solid var(--accent);outline-offset:1px;
+  }
+
+  .actions{display:flex;justify-content:flex-end;gap:10px;}
+  button.primary{
+    font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14.5px;
+    background:var(--accent);color:var(--accent-contrast);
+    border:none;border-radius:8px;padding:11px 20px;cursor:pointer;
+  }
+  button.primary:hover{filter:brightness(1.06);}
+  button.primary:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  button.primary:disabled{opacity:.45;cursor:not-allowed;}
+
+  .brief{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px 26px;
+  }
+  .brief pre{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-word;
+    color:var(--ink);background:var(--surface-muted);
+    border:1px solid var(--line);border-radius:8px;
+    padding:16px 18px;margin:14px 0 16px;
+  }
+  .brief .hint{color:var(--ink-muted);font-size:13.5px;margin-top:12px;}
+  .copy-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .copy-status{font-size:13px;color:var(--accent);font-family:'IBM Plex Mono',monospace;}
+
+  footer{color:var(--ink-muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:16px;}
+
+  @media (max-width:520px){
+    .tracker .label{display:none;}
+    .card{padding:16px;}
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Интервью перед red flag review</p>
+    <h1>DD-бриф по договорам</h1>
+    <p>Пять решений закрывают Раунд 1, ещё несколько ветвятся по типу сделки в
+      Раунде 2. Каждый вопрос — с рекомендованным ответом: если он подходит,
+      просто оставьте отметку и жмите «Подтвердить». В конце — готовый бриф,
+      который остаётся скопировать в чат вместе с договорами.</p>
+  </header>
+
+  <nav class="tracker" id="tracker" aria-label="Прогресс интервью"></nav>
+
+  <div class="summary-strip" id="r1-summary" hidden></div>
+
+  <section class="round" id="round1"></section>
+
+  <div class="summary-strip" id="r2-summary" hidden></div>
+
+  <section class="round" id="round2" hidden></section>
+
+  <section class="round" id="final" hidden></section>
+
+  <footer>Форма к скиллу <code>contract-dd-risks</code>. Раунд 3 — точечные
+    вопросы по конкретным пунктам договоров — открывается после того, как
+    пакет прочитан, и идёт уже текстом в чате.</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- SEED_DATA: подставьте сюда то, что уже известно из переписки,
+  // прежде чем публиковать форму (см. SKILL.md, шаг 1). Пустой объект —
+  // ничего не известно заранее, все поля идут с рекомендациями по умолчанию.
+  var SEED_DATA = {};
+
+  var ROUND1 = [
+    {
+      id:'side', num:1, title:'Чья сторона',
+      body:'На кого работаем в этом DD: кто клиент, чей интерес защищает реестр рисков.',
+      type:'single', allowCustom:true,
+      options:[
+        {id:'buyer_side', label:'Покупатель, инвестор или кредитор', recommended:true},
+        {id:'seller_side', label:'Продавец'},
+        {id:'company_side', label:'Сама компания или эмитент (внутренний аудит)'}
+      ]
+    },
+    {
+      id:'deal_type', num:2, title:'Тип сделки',
+      body:'Что обслуживает DD. Определяет, какая надстройка чек-листа риска идёт первой в Раунде 2.',
+      type:'single', allowCustom:false,
+      options:[
+        {id:'mna', label:'M&A — купля-продажа долей или акций', recommended:true},
+        {id:'financing', label:'Финансирование — кредит, облигации, синдикат'},
+        {id:'placement', label:'Размещение ценных бумаг — IPO, SPO, выпуск бондов'},
+        {id:'compliance', label:'Комплаенс-аудит контрактной базы без сделки на горизонте'}
+      ]
+    },
+    {
+      id:'documents', num:3, title:'Где пакет договоров',
+      body:'Без пакета, хотя бы частичного, эта работа не может начаться.',
+      type:'single', allowCustom:true,
+      options:[
+        {id:'attached', label:'Приложен к сообщению вместе с этим брифом', recommended:true},
+        {id:'dataroom', label:'Ссылка на dataroom'},
+        {id:'not_ready', label:'Комплект ещё нужно запросить у контрагента или продавца'}
+      ]
+    },
+    {
+      id:'materiality', num:4, title:'Порог существенности',
+      body:'Что попадает в реестр. На этапе DD сузить список проще, чем расширить после того, как договоры уже прочитаны один раз.',
+      type:'single', allowCustom:false,
+      options:[
+        {id:'all_deviations', label:'Всё, что отклоняется от рыночного стандарта', recommended:true},
+        {id:'threshold', label:'Только условия выше суммового порога', detail:{placeholder:'Например: свыше 10 млн ₽'}},
+        {id:'fixed_list', label:'Только заранее согласованный список категорий'}
+      ]
+    },
+    {
+      id:'deadline', num:5, title:'Срок и формат отчёта',
+      body:'Формат файла на дедлайн влияет меньше, чем сам дедлайн — он определяет глубину проверки в вопросе 4.',
+      type:'single', allowCustom:false,
+      options:[
+        {id:'chat_no_deadline', label:'Таблица в чате, без жёсткого дедлайна', recommended:true},
+        {id:'chat_deadline', label:'Таблица или меморандум к конкретной дате', detail:{placeholder:'Дедлайн: дд.мм.гггг'}},
+        {id:'file_deadline', label:'Файл .xlsx / .docx на шаблоне фирмы к дате', detail:{placeholder:'Дедлайн: дд.мм.гггг'}}
+      ]
+    }
+  ];
+
+  var ROUND2_COMMON = [
+    {
+      id:'reader', num:9, title:'Читатель отчёта',
+      body:'Юрист выдержит ссылки на пункты без пояснений; бизнесу нужен вывод в первом предложении строки.',
+      type:'single', allowCustom:false,
+      options:[
+        {id:'deal_lawyer', label:'Юрист, ведущий сделку', recommended:true},
+        {id:'business', label:'Бизнес-заказчик'},
+        {id:'credit_committee', label:'Кредитный комитет'}
+      ]
+    },
+    {
+      id:'jurisdiction', num:10, title:'Применимое право и юрисдикции в пакете',
+      body:'Иностранное право или ISDA-документация в пакете — повод держать в уме второе мнение по этому праву.',
+      type:'single', allowCustom:false,
+      options:[
+        {id:'ru_only', label:'Только российское право', recommended:true},
+        {id:'mixed', label:'Смесь российского и иностранного права'},
+        {id:'foreign_only', label:'Полностью иностранное право'}
+      ]
+    },
+    {
+      id:'known_issues', num:11, title:'Что уже известно проблемного',
+      body:'Не то, что нужно искать, а то, что уже знает пользователь: спор, санкционный список, недавняя смена контроля, жалобы на неисполнение.',
+      type:'freetext',
+      placeholder:'Нет известных проблем'
+    }
+  ];
+
+  var ROUND2_BRANCH = {
+    mna:{
+      label:'M&A', num:'6-M', title:'Приоритетные категории для M&A',
+      body:'Список сужается по итогам чтения, а не до него — на старте DD все пять проверяются.',
+      type:'multi',
+      options:[
+        {id:'coc', label:'Смена контроля и согласие на уступку', defaultChecked:true},
+        {id:'noncompete', label:'Эксклюзивность и non-compete', defaultChecked:true},
+        {id:'liability', label:'Ограничение ответственности', defaultChecked:true},
+        {id:'ip', label:'Права на РИД и лицензии', defaultChecked:true},
+        {id:'related_party', label:'Сделки с заинтересованностью', defaultChecked:true}
+      ]
+    },
+    financing:{
+      label:'Финансирование', num:'6-Ф', title:'Приоритетные категории для кредитных и долговых документов',
+      body:'Cross-default и обеспечение чаще всего переворачивают оценку риска — разбор начинается с них.',
+      type:'multi',
+      options:[
+        {id:'covenants', label:'Ковенанты и financial covenants', defaultChecked:true},
+        {id:'cross_default', label:'Cross-default', defaultChecked:true, priority:true},
+        {id:'negative_pledge', label:'Negative pledge', defaultChecked:true},
+        {id:'mac', label:'MAC / MAE', defaultChecked:true},
+        {id:'security', label:'Структура обеспечения', defaultChecked:true, priority:true},
+        {id:'sanctions_fx', label:'Санкционные и валютные оговорки', defaultChecked:true}
+      ]
+    },
+    placement:{
+      label:'Размещение ценных бумаг', num:'6-Р', title:'Приоритетные категории для документации размещения',
+      body:'Representations & warranties и MFN чаще всего расходятся между term sheet и итоговой документацией.',
+      type:'multi',
+      options:[
+        {id:'reps_warranties', label:'Representations & warranties эмитента', defaultChecked:true, priority:true},
+        {id:'lockup', label:'Lock-up и условия последующих размещений', defaultChecked:true},
+        {id:'mfn', label:'MFN-оговорки', defaultChecked:true, priority:true},
+        {id:'jurisdiction_clause', label:'Подсудность и арбитражная оговорка', defaultChecked:true},
+        {id:'sanctions_block', label:'Санкционные блок-положения', defaultChecked:true}
+      ]
+    },
+    compliance:{
+      label:'Комплаенс-аудит', num:'6-К', title:'Периметр аудита',
+      body:'Весь портфель — если объём разумен для ручного чтения; иначе выборка по сумме контракта, не по алфавиту.',
+      type:'single', allowCustom:false,
+      options:[
+        {id:'full_portfolio', label:'Весь портфель договоров', recommended:true},
+        {id:'by_counterparty', label:'Только определённый тип контрагента', detail:{placeholder:'Например: агентские договоры'}},
+        {id:'by_period', label:'Только договоры за определённый период', detail:{placeholder:'Например: 2023–2025'}}
+      ]
+    }
+  };
+
+  var DEAL_TYPE_LABELS = {mna:'M&A', financing:'Финансирование', placement:'Размещение ценных бумаг', compliance:'Комплаенс-аудит'};
+
+  // ---- state ----
+  var answers = {}; // id -> {optionId?, checked:Set, detailText?, freetext?, customText?}
+  var round1Confirmed = false;
+  var round2Confirmed = false;
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(html !== undefined) e.innerHTML = html;
+    return e;
+  }
+
+  function applySeed(q){
+    var seed = SEED_DATA[q.id];
+    if(seed === undefined) return;
+    if(q.type === 'freetext'){
+      answers[q.id] = {freetext: seed};
+    } else if(q.type === 'multi'){
+      answers[q.id] = {checked: new Set(seed)};
+    } else {
+      answers[q.id] = {optionId: seed};
+    }
+  }
+
+  function ensureAnswer(q){
+    if(answers[q.id]) return;
+    if(q.type === 'freetext'){
+      answers[q.id] = {freetext:''};
+    } else if(q.type === 'multi'){
+      var s = new Set();
+      q.options.forEach(function(o){ if(o.defaultChecked) s.add(o.id); });
+      answers[q.id] = {checked:s};
+    } else {
+      var rec = q.options.filter(function(o){return o.recommended;})[0];
+      answers[q.id] = {optionId: rec ? rec.id : null};
+    }
+  }
+
+  function renderQuestion(q){
+    ensureAnswer(q);
+    var card = el('div','card');
+    card.appendChild(el('p','qnum', 'Вопрос ' + q.num));
+    card.appendChild(el('h3', null, q.title));
+    card.appendChild(el('div','body', q.body));
+
+    if(q.type === 'freetext'){
+      var ta = el('textarea','freetext');
+      ta.placeholder = q.placeholder || '';
+      ta.value = answers[q.id].freetext || '';
+      ta.addEventListener('input', function(){ answers[q.id].freetext = ta.value; });
+      card.appendChild(ta);
+      return card;
+    }
+
+    var list = el('div','opt-list');
+    q.options.forEach(function(o){
+      var row = el('label','opt' + (o.priority ? ' priority' : ''));
+      var input = document.createElement('input');
+      input.type = (q.type === 'multi') ? 'checkbox' : 'radio';
+      input.name = q.id;
+      input.id = q.id + '_' + o.id;
+      if(q.type === 'multi'){
+        input.checked = answers[q.id].checked.has(o.id);
+      } else {
+        input.checked = answers[q.id].optionId === o.id;
+      }
+      row.appendChild(input);
+
+      var labelWrap = el('span', null);
+      var labelSpan = el('span','opt-label', o.label);
+      labelWrap.appendChild(labelSpan);
+      if(o.recommended){
+        labelWrap.appendChild(el('span','rec-tag','рекомендуется'));
+      }
+      row.appendChild(labelWrap);
+      list.appendChild(row);
+
+      var detailInput = null;
+      if(o.detail){
+        detailInput = document.createElement('input');
+        detailInput.type = 'text';
+        detailInput.className = 'detail-input';
+        detailInput.placeholder = o.detail.placeholder;
+        detailInput.hidden = !input.checked;
+        detailInput.addEventListener('input', function(){
+          answers[q.id].detailText = detailInput.value;
+        });
+        list.appendChild(detailInput);
+      }
+
+      input.addEventListener('change', function(){
+        if(q.type === 'multi'){
+          if(input.checked) answers[q.id].checked.add(o.id);
+          else answers[q.id].checked.delete(o.id);
+        } else {
+          answers[q.id].optionId = o.id;
+          list.querySelectorAll('.detail-input').forEach(function(di){ di.hidden = true; });
+          if(detailInput) detailInput.hidden = false;
+        }
+      });
+    });
+
+    if(q.allowCustom){
+      var row = el('label','opt');
+      var input = document.createElement('input');
+      input.type = 'radio'; input.name = q.id; input.id = q.id + '_custom';
+      input.checked = answers[q.id].optionId === 'custom';
+      row.appendChild(input);
+      var labelWrap = el('span', null, '');
+      labelWrap.appendChild(el('span','opt-label','Свой вариант'));
+      row.appendChild(labelWrap);
+      list.appendChild(row);
+
+      var customInput = document.createElement('input');
+      customInput.type = 'text'; customInput.className = 'detail-input';
+      customInput.placeholder = 'Опишите вариант';
+      customInput.hidden = !input.checked;
+      customInput.addEventListener('input', function(){ answers[q.id].customText = customInput.value; });
+      list.appendChild(customInput);
+
+      input.addEventListener('change', function(){
+        answers[q.id].optionId = 'custom';
+        list.querySelectorAll('.detail-input').forEach(function(di){ if(di !== customInput) di.hidden = true; });
+        customInput.hidden = false;
+      });
+    }
+
+    card.appendChild(list);
+    return card;
+  }
+
+  function answerLabel(q){
+    var a = answers[q.id];
+    if(!a) return '—';
+    if(q.type === 'freetext'){
+      return (a.freetext && a.freetext.trim()) ? a.freetext.trim() : (q.placeholder || '—');
+    }
+    if(q.type === 'multi'){
+      var picked = q.options.filter(function(o){ return a.checked.has(o.id); }).map(function(o){return o.label;});
+      return picked.length ? picked.join('; ') : 'ничего не отмечено';
+    }
+    if(a.optionId === 'custom'){
+      return a.customText && a.customText.trim() ? a.customText.trim() : 'свой вариант (не описан)';
+    }
+    var opt = q.options.filter(function(o){return o.id === a.optionId;})[0];
+    if(!opt) return '—';
+    var txt = opt.label;
+    if(opt.detail && a.detailText && a.detailText.trim()) txt += ' — ' + a.detailText.trim();
+    return txt;
+  }
+
+  // ---- rendering rounds ----
+  var round1El = document.getElementById('round1');
+  var round2El = document.getElementById('round2');
+  var finalEl = document.getElementById('final');
+  var r1SummaryEl = document.getElementById('r1-summary');
+  var r2SummaryEl = document.getElementById('r2-summary');
+
+  function buildRound1(){
+    round1El.innerHTML = '';
+    ROUND1.forEach(function(q){ applySeed(q); round1El.appendChild(renderQuestion(q)); });
+    var actions = el('div','actions');
+    var btn = el('button','primary','Подтвердить раунд 1 →');
+    btn.addEventListener('click', confirmRound1);
+    actions.appendChild(btn);
+    round1El.appendChild(actions);
+  }
+
+  function currentBranch(){
+    var a = answers['deal_type'];
+    if(!a) return null;
+    return ROUND2_BRANCH[a.optionId] || null;
+  }
+
+  function buildRound2(){
+    round2El.innerHTML = '';
+    var branch = currentBranch();
+    if(branch){
+      var bq = Object.assign({id:'branch_pick', num:branch.num, title:branch.title, body:branch.body, type:branch.type, allowCustom:false}, {options:branch.options});
+      applySeed(bq);
+      round2El.appendChild(renderQuestion(bq));
+    }
+    ROUND2_COMMON.forEach(function(q){ applySeed(q); round2El.appendChild(renderQuestion(q)); });
+    var actions = el('div','actions');
+    var btn = el('button','primary','Собрать бриф →');
+    btn.addEventListener('click', confirmRound2);
+    actions.appendChild(btn);
+    round2El.appendChild(actions);
+  }
+
+  function confirmRound1(){
+    round1Confirmed = true;
+    round1El.hidden = true;
+    renderR1Summary();
+    buildRound2();
+    round2El.hidden = false;
+    updateTracker();
+    round2El.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function confirmRound2(){
+    round2Confirmed = true;
+    round2El.hidden = true;
+    renderR2Summary();
+    buildFinal();
+    finalEl.hidden = false;
+    updateTracker();
+    finalEl.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function editRound1(){
+    round1Confirmed = false; round2Confirmed = false;
+    r1SummaryEl.hidden = true; r2SummaryEl.hidden = true;
+    round2El.hidden = true; finalEl.hidden = true;
+    round1El.hidden = false;
+    updateTracker();
+    round1El.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function editRound2(){
+    round2Confirmed = false;
+    r2SummaryEl.hidden = true; finalEl.hidden = true;
+    round2El.hidden = false;
+    updateTracker();
+    round2El.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function renderR1Summary(){
+    r1SummaryEl.innerHTML = '';
+    ROUND1.forEach(function(q){
+      r1SummaryEl.appendChild(el('span','chip', '<b>' + q.title + ':</b> ' + escapeHtml(answerLabel(q))));
+    });
+    var editBtn = el('button','edit','Изменить раунд 1');
+    editBtn.addEventListener('click', editRound1);
+    r1SummaryEl.appendChild(editBtn);
+    r1SummaryEl.hidden = false;
+  }
+
+  function renderR2Summary(){
+    r2SummaryEl.innerHTML = '';
+    var branch = currentBranch();
+    if(branch){
+      var bq = {id:'branch_pick', title:branch.title, type:branch.type, options:branch.options};
+      r2SummaryEl.appendChild(el('span','chip', '<b>' + branch.label + ':</b> ' + escapeHtml(answerLabel(bq))));
+    }
+    ROUND2_COMMON.forEach(function(q){
+      r2SummaryEl.appendChild(el('span','chip', '<b>' + q.title + ':</b> ' + escapeHtml(answerLabel(q))));
+    });
+    var editBtn = el('button','edit','Изменить раунд 2');
+    editBtn.addEventListener('click', editRound2);
+    r2SummaryEl.appendChild(editBtn);
+    r2SummaryEl.hidden = false;
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function buildBriefText(){
+    var lines = [];
+    lines.push('Бриф для DD по договорам');
+    lines.push('');
+    ROUND1.forEach(function(q){ lines.push(q.title + ': ' + answerLabel(q)); });
+    var branch = currentBranch();
+    if(branch){
+      var bq = {id:'branch_pick', title:branch.title, type:branch.type, options:branch.options};
+      lines.push(branch.label + ' — приоритетные категории: ' + answerLabel(bq));
+    }
+    ROUND2_COMMON.forEach(function(q){ lines.push(q.title + ': ' + answerLabel(q)); });
+    lines.push('');
+    lines.push('Раунд 3 (точечные вопросы по пунктам договоров) — по ходу чтения пакета.');
+    return lines.join('\n');
+  }
+
+  function buildFinal(){
+    finalEl.innerHTML = '';
+    var box = el('div','brief');
+    box.appendChild(el('p','eyebrow','Бриф собран'));
+    box.appendChild(el('h2', null, 'Готово к передаче в чат'));
+    var pre = document.createElement('pre');
+    pre.id = 'brief-text';
+    pre.textContent = buildBriefText();
+    box.appendChild(pre);
+
+    var row = el('div','copy-row');
+    var copyBtn = el('button','primary','Скопировать бриф');
+    var status = el('span','copy-status','');
+    copyBtn.addEventListener('click', function(){
+      var text = pre.textContent;
+      function done(ok){ status.textContent = ok ? 'Скопировано' : 'Не удалось скопировать — выделите текст вручную'; }
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(function(){done(true);}, function(){done(false);});
+        } else {
+          throw new Error('no clipboard api');
+        }
+      }catch(e){ done(false); }
+    });
+    row.appendChild(copyBtn);
+    row.appendChild(status);
+    box.appendChild(row);
+
+    box.appendChild(el('p','hint','Пришлите этот бриф вместе с договорами обратно в чат с агентом — оттуда начнётся чтение пакета по чек-листу и сборка реестра рисков.'));
+    finalEl.appendChild(box);
+  }
+
+  // ---- tracker ----
+  var trackerEl = document.getElementById('tracker');
+  function updateTracker(){
+    trackerEl.innerHTML = '';
+    var steps = [
+      {label:'Раунд 1', state: round1Confirmed ? 'done' : 'active'},
+      {label:'Раунд 2', state: round2Confirmed ? 'done' : (round1Confirmed ? 'active' : 'pending')},
+      {label:'Бриф', state: round2Confirmed ? 'active' : 'pending'}
+    ];
+    steps.forEach(function(s, i){
+      var step = el('div','step' + (s.state !== 'pending' ? ' ' + s.state : ''));
+      var dot = el('span','dot');
+      if(s.state !== 'done'){ dot.appendChild(el('span', null, String(i+1))); }
+      step.appendChild(dot);
+      step.appendChild(el('span','label', s.label));
+      trackerEl.appendChild(step);
+      if(i < steps.length - 1) trackerEl.appendChild(el('div','bar'));
+    });
+  }
+
+  // ---- boot ----
+  function start(data){
+    if(data && typeof data === 'object') Object.assign(SEED_DATA, data);
+    buildRound1();
+    updateTracker();
+  }
+  if(window.claude && window.claude.hot && window.claude.hot.ready){
+    window.claude.hot.ready(start);
+  } else {
+    start(window.claude && window.claude.hot ? window.claude.hot.data : null);
+  }
+})();
+</script>
