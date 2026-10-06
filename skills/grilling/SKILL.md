@@ -42,6 +42,22 @@ Count rounds, not questions. Forty questions across four rounds is an ordinary s
 - Separate consecutive questions with a horizontal rule.
 - Give the recommendation honestly, including when it is "не делать этого". A recommendation you do not believe wastes the user's only real job here.
 
+## Interactive mode (default)
+
+Ask each round through the `AskUserQuestion` tool, not as a block of text. The user picks an answer with a click instead of typing numbers, and a round is still answered in one sitting. `/grill-me` always runs this way. The `❓`/`➡️` format above is the **fallback**, for when the tool is unavailable, returns an error, or the session is non-interactive. If the tool shows up only as a deferred name, load it with ToolSearch first.
+
+How a round maps onto the tool:
+
+- **One round, several calls.** The tool takes 1 to 4 questions per call, so a round of nine questions is three calls, grouped by topic. The frontier does not change between calls: do not push a question to the next round because of the limit, and do not add a question that depends on an answer from an earlier batch of the same round. Tightening the wording of a later batch in light of answers already given is fine.
+- **The recommendation is the first option**, labelled with a trailing "(Recommended)", and its description carries the reasoning the `➡️` line would have carried. The honesty rule stands: if the recommendation is "не делать", the first option says so.
+- **2 to 4 options per question.** Where a question has more variants, merge neighbours into groups or switch to `multiSelect`, and put the detail in the option descriptions. Do not add an "Другое" option: the tool adds a free-text "Other" itself, and that is where "не знаю", disagreement and the user's own variant arrive. An "Other" answer is the most informative kind, not noise.
+- **Yes/no questions** are two options, worded so that "Да" means agreeing with the recommendation.
+- **`header`** is a topic label of at most 12 characters ("Площадки", "Читатель"), not a question.
+- **Question text** is self-contained, ends with a question mark, and follows the house style above: Russian, no em dashes.
+- **Open-ended asks stay in text**: sample questions, documents to send, numbers, names, free narrative. They do not reduce to 2 to 4 options. Put them in a plain message after the interactive batches of the same round, with a recommendation line.
+- **Facts you looked up** go in a short text message *before* the first call; the tool does not carry long context.
+- **The closing confirmation is interactive too**: "Понимание общее, можно приступать?" with "Да, приступай (Recommended)" and "Нет, есть расхождение". Wait for the answer before any work starts.
+
 ## Facts are yours, decisions are theirs
 
 **Finding facts is your job, never the user's.** When a frontier question needs something the environment can settle, go and find it. In this repository that means, before asking:
@@ -86,7 +102,7 @@ When they confirm, hand over a compact summary of what was settled: the decision
 
 ## It is working if
 
-- A round arrives as a numbered list, each question with its recommendation on its own line, answerable by number.
+- A round arrives as an interactive choice, each question with its recommended option first and answerable by a click. In the fallback mode it is a numbered list, each question with its recommendation on its own line, answerable by number.
 - Nothing in a round needs another question in the same round answered first.
 - Later rounds ask things the first round could not have asked.
 - You looked facts up instead of asking about them.
