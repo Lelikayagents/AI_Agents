@@ -61,6 +61,8 @@ These are the checks with the highest yield. Run them deliberately rather than h
 
 **Staleness against the digest's own period.** If the document covers a period and mentions a hearing, deadline or effective date that falls *inside* that period, a future tense ("рассмотрит", "будет назначено") is already wrong on the day of publication.
 
+**Exchange, clearing and derivatives claims.** Listing thresholds, free-float, settlement cycles, central-counterparty status, contract specifications and exchange rule editions go stale fast and are often repeated from press coverage. Check them against the exchange's own rules and the Bank of Russia acts, using the recipes and the log of already verified facts in `skills/exchange-expert/` (`references/source-recipes.md`, `references/verification-log.md`). Do not copy a log entry older than a year without re-checking it, and keep its status label (`первоисточник`, `вторичный`, `не проверено`) in your finding.
+
 ## Output
 
 Report in the language of the document under review. Group findings by the action required, not by the order they appear in the document — the editor is triaging:
