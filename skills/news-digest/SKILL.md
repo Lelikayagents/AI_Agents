@@ -1,6 +1,6 @@
 ---
 name: news-digest
-description: Deliver a compact, cleanly formatted weekday news digest covering business/markets (РБК, FT, Bloomberg), the AI sector, socio-political news (Новая газета), and new Russian legislation with a short comment and a link to the act's text for each item. Picked for a capital-markets/financial & banking lawyer. Nothing invented — every item links to its source, and new-law items link to the primary text. Fires automatically via a 10:30 Moscow routine on weekdays; also usable on demand for "дай сводку новостей".
+description: Deliver a compact, cleanly formatted weekday news digest covering business/markets (РБК, FT, Bloomberg, plus the user's own Bloomberg newsletter emails), the AI sector, socio-political news (Новая газета), and new Russian legislation with a short comment and a link to the act's text for each item. Picked for a capital-markets/financial & banking lawyer. Nothing invented — every item links to its source, and new-law items link to the primary text. Fires automatically via a 10:30 Moscow routine on weekdays; also usable on demand for "дай сводку новостей".
 ---
 
 # News Digest
@@ -18,6 +18,20 @@ law.
   paywalled past the headline, summarize from the headline, lead, and
   whatever open outlets are quoting or re-reporting the same story — the
   link still goes to the original FT/Bloomberg piece, not the reprint.
+- **Почта пользователя — рассылки Bloomberg.** If the Gmail connector is
+  available in this session, search the inbox for
+  `from:noreply@news.bloomberg.com newer_than:1d` (`newer_than:3d` on a
+  Monday, to cover the weekend) and read the full message body of anything
+  that comes back — these are full Bloomberg Opinion newsletters (Points of
+  Return, Money Stuff and similar), richer than a headline, each linking out
+  to several underlying Bloomberg News/Opinion articles. Pull the genuinely
+  significant items out of them for the business/markets or AI sections,
+  same bar as everything else. Link to the actual `bloomberg.com/...`
+  article URL quoted in the email body, not the `sli.bloomberg.com/click?...`
+  tracking redirect that sits next to it; it is fine to leave the
+  `utm_`/`cmpid` query parameters on the link rather than hand-edit the URL.
+  If the Gmail connector is not available in this session, skip this source
+  silently and rely on the others — don't block the digest on it.
 - **Сектор ИИ:** FT and Bloomberg both run a dedicated tech/AI beat, so
   start there; add specialist coverage when the main four don't have the
   story — TechCrunch, The Information, Reuters Tech, Ars Technica for the
