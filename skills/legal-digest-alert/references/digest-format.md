@@ -60,6 +60,26 @@ When an item has no lettered list at all, a trailing line such as "Судебн�
 
 For a pending case (an **определение о передаче**) the shape stops at the parties' positions and closes with "Судебное заседание назначено на …" — do not write the outcome as a holding.
 
+## Template
+
+`assets/digest-template.docx` was cut from the issue «С 3 по 29 октября 2026 года» (the latest of three samples). It keeps that file's `styles.xml`, numbering, footer (page number only, no header) and page setup (A4, margins top/bottom 1134, left 1701, right 850 twips); all content is replaced by yellow `[[placeholders]]`, and the source's author name, company and dates are scrubbed from the document properties.
+
+Use: copy the file, then replace the skeleton with the real issue. The skeleton holds one example of each shape: an act published in final form, a bill with a lettered list and the open-sources note, a continuing item, a decided court case, a pending court case. Duplicate a paragraph's XML to add items, delete the shapes you do not need, and remove the yellow highlight from every run once its placeholder is filled. Each citation line carries a placeholder hyperlink (`rIdTpl1`–`rIdTpl5` in `word/_rels/document.xml.rels`); point it at the real document, or delete the hyperlink wrapper if no official text is online.
+
+Hyperlink targets seen in the issues: acts, `http://publication.pravo.gov.ru/document/<eoNumber>`; bills, `https://sozd.duma.gov.ru/bill/<номер>`; court cases, `https://kad.arbitr.ru/Card?number=<номер дела, URL-кодированный>`; occasionally `consultant.ru/document/cons_doc_LAW_<n>/`.
+
+### What the three issued digests (Sep-Oct 2026) show, compared with the rules in this file
+
+Where the issued text and a rule written here disagree, the issued text is the firm's actual practice. Items marked **решить** are open: ask the user before changing the rule.
+
+- **Suppressed paragraphs.** Every one in the samples, including prose after a lettered list and the citation line, is `w:ind w:left="720"` with no `firstLine`. The 1440 / 2160 values in the table above do not occur in these files.
+- **Press-sourced items.** The label «Материал СМИ» does not occur. The standing sentence is a suppressed `SBLENGL3` paragraph before the citation line: «Содержание Законопроекта № X приведено по открытым источникам: на дату подготовки обзора его текст официально не опубликован.» Variant when the source is the press: «… приведено по сообщениям средств массовой информации: текст, принятый в третьем чтении, на дату подготовки обзора не опубликован.»
+- **Bill citation line.** «Проект федерального закона № X «[название]»», hyperlinked to sozd; defined short form is «Законопроект № X». Not «Законопроект № X «…»» as written under Item structure.
+- **Defined terms.** `(далее – «X»)` is written with an **en dash**, 12 times out of 12 in the latest issue (the opinion template does the same). The Alert partner markup asked for a hyphen with spaces. **решить:** which applies to digests. The term run is italic, and bold comes from the bold `SBLENGL2` style; in `SBLENGL3` paragraphs set bold explicitly, as the template does.
+- **Per cent.** The latest issue spells «процентов» (0 uses of «%», 11 of «процент»); the two earlier issues use «%». Follow the latest. Money is «10 млн руб.», «13,3 млрд руб.».
+- **Headlines** end with a full stop. A continuing item opens «В предыдущем обзоре мы писали о …», then only the delta.
+- **Windows.** The three samples cover 3-30 Sep, 3 Sep-2 Oct and 3-29 Oct. The first two overlap, so one is evidently a revision of the other; the Oct issue starts on the 3rd although the previous one ends on 2 Oct. **решить:** confirm the window rule (this file says: start the day after the previous issue ends).
+
 ## Text conventions
 
 The rules in `references/writing-style.md` apply in full, and the same hard bans as for Alerts: **no "ё" and no em dash "—" anywhere** in the delivered text (hyphen with spaces instead; en dash only inside numeric ranges). Defined terms introduced with `(далее - «X»)` are set in **bold italic** — italic alone is wrong, and the bold+italic run covers the guillemets too: ***«Указ № 604»***. Placeholders awaiting a real number or date are highlighted yellow.
