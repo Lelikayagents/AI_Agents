@@ -29,7 +29,7 @@ The humanizer skill's full pattern list (inflated significance, promotional lang
 
 ## Patterns already covered by the English list — apply them in Russian too
 
-- **Em dash (—): banned outright in client deliverables.** This started as a frequency cap and was tightened to an absolute rule by the partner edit-pass: a delivered Alert/справка/digest should contain zero "—" characters. Use a hyphen with spaces where a dash is genuinely needed (`Период прогноза - не менее 12 месяцев`), an en dash inside numeric ranges (`1.2–1.5`), or rewrite the sentence — e.g. "Срок раскрытия … это риск для графика сделки" rather than "Срок раскрытия … — риск". Grep the finished text for "—" before delivery; any hit is a defect.
+- **Em dash (—): banned outright in client deliverables.** This started as a frequency cap and was tightened to an absolute rule by the partner edit-pass: a delivered Alert/справка/digest should contain zero "—" characters. Grep the finished text for "—" before delivery; any hit is a defect. What replaces it depends on the deliverable: **in a справка the en dash "–" is the ordinary dash of running text**, with spaces around it (`Банк России – единственный из рассматриваемых органов`) — that is what the firm's own memo does, 72 times outside the «(далее – …)» construction. In an Alert and a digest, the convention recorded from the partner markup is a hyphen with spaces (`Период прогноза - не менее 12 месяцев`), with the en dash kept for numeric and article ranges (`1.2–1.5`, `ст. 27–32`) and inside `(далее – «Положение»)`. Either way, rewriting the sentence is always an option — "Срок раскрытия … это риск для графика сделки" rather than "Срок раскрытия … — риск".
 - **The letter "ё" is not used.** Write "прошел", "еще", "объем", "отчетность", "зеленые", "учет". Grep for "ё"/"Ё" before delivery.
 - **Rule of three.** Don't force findings into triads ("во-первых, во-вторых, в-третьих" or three-item lists) just to look thorough — list exactly as many items as are actually distinct, even if that's two or four.
 - **Negative parallelism** ("это не просто X, это Y") — keep only when the contrast is substantively load-bearing (e.g. contrasting the old narrow corporate-dispute basis for раскрытие обеспечительных мер against a broader new basis is a real legal distinction worth stating this way); cut it when it's decorative.
@@ -51,7 +51,7 @@ The humanizer skill's full pattern list (inflated significance, promotional lang
 4. Check that enumerations are rendered as bulleted lists rather than semicolon-chained prose.
 5. Check that no two consecutive subsections have identical sentence-count/paragraph-length shape.
 6. Confirm every hedge phrase is attached to a real analytical claim, not standing alone as filler.
-7. Confirm every placeholder is highlighted yellow and every defined term is bold italic at first use.
+7. Confirm the placeholder highlighting and the defined-term formatting match the deliverable: a справка uses green highlighting and bold-only defined terms (`spravka-format.md`); an Alert uses yellow highlighting and bold italic (`alert-format.md`).
 8. If `humanizer` is available as a skill, invoke it on the finished draft as a last independent check before delivering the file.
 
 Note on this file's own prose: the guidance above is written for the model, not for the client, so it uses em dashes freely. The bans apply to delivered Russian-language client documents, not to these reference notes.
