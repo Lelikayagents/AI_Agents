@@ -2,7 +2,7 @@
 
 An Alert is a deep, single-topic analysis written for a client who needs to understand exactly what changed and what it means for them — the whole point is to demonstrate that the firm caught the change fast and understands it in depth. Where the digest reports, the Alert *advises*.
 
-Use this same shape for a **справка** (a memo answering one specific client legal question) — treat the question itself as the "development" the Alert would normally open with, and keep the closing recommendations section, since a справка without a practical answer at the end isn't useful to the client.
+**A справка does not use this file.** A справка (the firm calls it a «Меморандум») has its own measured spec in `spravka-format.md`, taken from a real firm memo: numbered body paragraphs on `SBLRUSL2`, citations in footnotes, «Основные выводы» as section 2 rather than recommendations at the end, and a blank template in `assets/spravka-template.docx`. Four of the text conventions below differ there — defined terms, placeholder colour, dash style, and «и» before the last lettered item — and the справка file's table lists the differences. Use this file only for an Alert.
 
 This file was revised after a partner edit-pass over a real Alert draft. Where the partner's markup contradicted the earlier version of this file, the markup wins and is recorded below.
 
@@ -37,7 +37,7 @@ Bulleted lists use the template's bullet numbering definitions; nested bullets a
 
 ## Text conventions
 
-These are hard rules, taken from the partner markup:
+These are hard rules, taken from the partner markup on an Alert draft. They are **not** the справка's rules: a real firm memo, measured in November 2026, uses the en dash freely in running text, bold-only (not bold italic) defined terms, green (not yellow) placeholder highlighting, and no «и» before the last lettered item. See `spravka-format.md`. Both sets ban the em dash and «ё» outright, so those two carry everywhere.
 
 - **No "ё".** Write "прошел", "еще", "объем", "отчетность", "зеленые".
 - **No em dash "—" anywhere.** Use a hyphen with spaces: `(далее - «Положение»)`, `Период прогноза - не менее 12 месяцев`, `IPO - наименее подходящий момент`. An en dash "–" is fine inside numeric ranges (`1.2–1.5`). If a sentence wants an em dash for emphasis, rewrite it — e.g. "Срок раскрытия … это риск для графика сделки", not "Срок раскрытия … — риск для графика сделки".
