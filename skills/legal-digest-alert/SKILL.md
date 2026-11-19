@@ -11,13 +11,16 @@ description: Research Russian legislative and regulatory developments and turn t
 |---|---|---|---|
 | **Дайджест** | Neutral, third person, reporting only | Multiple developments over a period | None — no recommendations |
 | **Alert** | First-person-plural, advisory ("мы полагаем...") | One development, deep dive | Mandatory "Наши предложения и рекомендации" |
-| **Справка** (a.k.a. «Меморандум») | Same as Alert | One client question, analysed body by body or issue by issue | «Основные выводы» — up front as section 2, not at the end |
+| **Справка** | Same as Alert, but written for a lawyer, not a client | One question, answered as briefly as it can be answered | «Основные выводы» first, then one section per вывод |
+| **Меморандум** | Same as Alert | One question, analysed body by body or issue by issue | «Основные выводы» up front as section 2, not at the end |
 
 Read `references/digest-format.md`, `references/alert-format.md` or `references/spravka-format.md` in full before drafting — they carry the exact document shape, Word style IDs, citation formats, and the specific fixed wording (titles, framing sentences, footer, contact block) that must be reproduced verbatim, not paraphrased. Read `references/writing-style.md` too — it's not optional polish, it's the register this skill writes in from the first draft.
 
 `alert-format.md` was revised after a partner edit-pass over a real Alert draft; where it records a convention as coming from that markup (numbered `SBLRUSL1` headings, no em dashes, no "ё", yellow-highlighted placeholders, bold-italic defined terms, lists over dense prose, no drafting-history commentary), treat it as settled rather than re-deriving it.
 
-`spravka-format.md` is measured from a real firm memo, not inferred, and it overrides `alert-format.md` for a справка on four points: defined terms are bold only, placeholders are highlighted green, the en dash is the ordinary dash of running text, and there is no «и» before the last lettered item. Its blank template is `assets/spravka-template.docx`.
+**A справка is not a меморандум.** The user said so in as many words on 19 November 2026 after a request for a справка came back as a nine-page memo: a справка is a short document written so another lawyer can understand the question and check the answer, with the citations inline as `(ст. 10 Закона о чем-то (>>>))` rather than in footnotes, no memo header block, no «Введение, объем анализа и допущения», no «Оговорки», and no section that does not answer to a listed вывод. `spravka-format.md` carries both shapes: the short справка first, then the measured меморандум spec. Both use `assets/spravka-template.docx`.
+
+That file is measured from a real firm memo, not inferred, and it overrides `alert-format.md` on four points: defined terms are bold only, placeholders are highlighted green, there is no «и» before the last lettered item, and in a справка no dash is used at all — neither «—» nor «–», only a hyphen with spaces.
 
 Don't blend the registers: a digest item must not editorialize, and an Alert must not skip its recommendations section for the sake of sounding neutral.
 
